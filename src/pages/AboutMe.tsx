@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 
 const AboutMe: React.FC = () => {
   return (
@@ -8,16 +9,18 @@ const AboutMe: React.FC = () => {
 				<div className="profile-teaser media flex-column flex-lg-row">
 					
 					<div className="media-body">
-						<h2 className="name font-weight-bold mb-1">Simon Doe</h2>
-						<div className="tagline mb-3">Senior Software Engineer</div>
-						<div className="bio mb-4">I'm a software engineer specialised in frontend and backend development for complex scalable web apps. I write about software development on <a className="link-on-bg" href="blog-home.html">my blog</a>. Want to know how I may help your project? Check out my project <a className="link-on-bg" href="projects.html">portfolio</a> and <a className="link-on-bg" href="resume.html">online resume</a>.
+						<h2 className="name font-weight-bold mb-1">Manish Choudhary</h2>
+						<div className="tagline mb-3">Senior Software Engineer | Cloud & AI Enthusiast</div>
+						<div className="bio mb-4">
+							Hey! I'm Manish, a techie who loves building smart, scalable solutions and making life easier with automation and the cloud. I’m always up for a new challenge, learning something fresh, or helping others grow. When I’m not coding, you’ll find me hanging out with my adorable 9-month-old daughter, Dhriti—she’s the sweetest, funniest little bundle of joy and keeps me inspired every day!<br/><br/>
+							Want to know more about my work or projects? Check out my <a className="link-on-bg" href="resume.html">online resume</a> and <a className="link-on-bg" href="portfolio.html">project portfolio</a>.
 						</div>
 						<div className="mb-4">
 							<a className="btn btn-primary mr-2 mb-3" href="portfolio.html"><i className="fas fa-arrow-alt-circle-right mr-2"></i><span className="d-none d-md-inline">View</span> Portfolio</a>
-							<a className="btn btn-secondary mb-3" href="resume.html"><i className="fas fa-file-alt mr-2"></i><span className="d-none d-md-inline">View</span> Resume</a>
+							<Link className="btn btn-secondary mb-3" to="/resume"><i className="fas fa-file-alt mr-2"></i><span className="d-none d-md-inline">View</span> Resume</Link>
 						</div>
 					</div>
-					<img className="profile-image mb-3 mb-lg-0 ml-lg-5 mr-md-0" src="assets/images/profile-lg.jpg" alt="" />
+					<img className="profile-image mb-3 mb-lg-0 ml-lg-5 mr-md-0" src="assets/images/profile-lg-o.JPG" alt="Manish Kumar Choudhary" />
 				</div>
 			</div>
 		</section>
@@ -25,7 +28,7 @@ const AboutMe: React.FC = () => {
 		<section className="overview-section p-3 p-lg-5">
 			<div className="container">
 				<h2 className="section-title font-weight-bold mb-3">What I do</h2>
-				<div className="section-intro mb-5">I have more than 10 years' experience building software for clients all over the world. Below is a quick overview of my main technical skill sets and technologies I use. Want to find out more about my experience? Check out my <a href="resume.html">online resume</a> and <a href="portfolio.html">project portfolio</a>.</div>
+				<div className="section-intro mb-5">With over a decade of experience, I specialize in cloud, AI, and automation—delivering impactful solutions for global clients. My expertise spans Azure, AWS, .NET, JavaScript, and DevOps. I love mentoring, open source, and exploring new tech. And when I’m not coding, you’ll find me making my daughter Dhriti laugh! Want to know more? Check out my <a href="resume.html">online resume</a> and <a href="portfolio.html">project portfolio</a>.</div>
 				<div className="row">
 					<div className="item col-6 col-lg-3">
 						<div className="item-inner">

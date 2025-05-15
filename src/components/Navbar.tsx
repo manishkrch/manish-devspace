@@ -1,7 +1,9 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useLocation } from 'react-router-dom';
 
 const Navbar: React.FC = () => {
+  const location = useLocation();
+
   return (
     <header className="header text-center">	    
 		<div className="force-overflow">
@@ -55,33 +57,33 @@ const Navbar: React.FC = () => {
       </div>
 
       <ul className="navbar-nav flex-column text-left">
-        <li className="nav-item active">
+        <li className={`nav-item${location.pathname === '/about' ? ' active' : ''}`}>
           <Link className="nav-link" to="/about">
             <i className="fas fa-user fa-fw mr-2"></i>About Me
-            <span className="sr-only">(current)</span>
+            {location.pathname === '/about' && <span className="sr-only">(current)</span>}
           </Link>
         </li>
-        <li className="nav-item">
+        <li className={`nav-item${location.pathname === '/portfolio' ? ' active' : ''}`}>
           <Link className="nav-link" to="/portfolio">
             <i className="fas fa-laptop-code fa-fw mr-2"></i>Portfolio
           </Link>
         </li>
-        <li className="nav-item">
+        <li className={`nav-item${location.pathname === '/services' ? ' active' : ''}`}>
           <Link className="nav-link" to="/services">
             <i className="fas fa-briefcase fa-fw mr-2"></i>Services &amp; Pricing
           </Link>
         </li>
-        <li className="nav-item">
+        <li className={`nav-item${location.pathname === '/resume' ? ' active' : ''}`}>
           <Link className="nav-link" to="/resume">
             <i className="fas fa-file-alt fa-fw mr-2"></i>Resume
           </Link>
         </li>
-        <li className="nav-item">
+        <li className={`nav-item${location.pathname === '/blog' ? ' active' : ''}`}>
           <Link className="nav-link" to="/blog">
             <i className="fas fa-blog fa-fw mr-2"></i>Blog
           </Link>
         </li>
-        <li className="nav-item">
+        <li className={`nav-item${location.pathname === '/contact' ? ' active' : ''}`}>
           <Link className="nav-link" to="/contact">
             <i className="fas fa-envelope-open-text fa-fw mr-2"></i>Contact
           </Link>
