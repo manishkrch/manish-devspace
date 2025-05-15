@@ -89,9 +89,10 @@ const AboutMe: React.FC = () => {
 						</div>
 					</div>
 				</div>
-				<div className="text-center py-3"><a href="services.html" className="btn btn-primary"><i className="fas fa-arrow-alt-circle-right mr-2"></i>Services &amp; Pricing
+				<div className="text-center py-3">
+                    <Link to="/services" className="btn btn-primary"><i className="fas fa-arrow-alt-circle-right mr-2"></i>Services &amp; Pricing
 					
-				</a></div>
+				</Link></div>
 				
 			</div>
 		</section>
