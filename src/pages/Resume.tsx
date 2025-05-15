@@ -31,7 +31,7 @@ const Resume: React.FC = () => {
 				<hr />
 				<div className="resume-intro py-3">
 					<div className="media flex-column flex-md-row align-items-center">
-						<img className="resume-profile-image mb-3 mb-md-0 mr-md-5 ml-md-0 rounded mx-auto" src="/public/assets/images/resume-profile1.png" alt="Manish Kumar Choudhary" />
+						<img className="resume-profile-image mb-3 mb-md-0 mr-md-5 ml-md-0 rounded mx-auto" src="/assets/images/resume-profile1.png" alt="Manish Kumar Choudhary" />
 						<div className="media-body text-left">
 							<p className="mb-0">Experienced Software Development Engineer at Microsoft, passionate about leveraging AI and automation to solve real-world problems. Recognized for technical leadership, innovation, and a strong drive for continuous improvement. Skilled in cloud architecture, automation, and full-stack development. AWS Certified Solutions Architect Professional. Awarded MVP by C# Corner. Committed to delivering impactful solutions and driving team success.</p>
 						</div>
