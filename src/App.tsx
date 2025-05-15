@@ -1,35 +1,35 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import './App.css'
+// src/App.tsx
+import React from 'react';
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import AboutMe from './pages/AboutMe';
+import Resume from './pages/Resume';
+import Navbar from './components/Navbar';
 
-function App() {
-  const [count, setCount] = useState(0)
-
+const App: React.FC = () => {
   return (
-    <>
-      <div>
-        <a href="https://vite.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
-      </div>
-      <h1>Vite + React + (Manish-devspace)</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.tsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
-    </>
-  )
-}
+    <Router>
+        <Navbar />
+        <div className="main-wrapper">
+          <Routes>
+            <Route path="/aboutme" element={<AboutMe />} />
+            <Route path="/portfolio" element={<div>Portfolio Page</div>} />
+            <Route path="/services" element={<div>Services Page</div>} />
+            <Route path="/resume" element={<Resume/>} />
+            <Route path="/blog" element={<div>Blog Page</div>} />
+            <Route path="/contact" element={<div>Contact Page</div>} />
+            <Route path="/project" element={<div>Project Page</div>} />
+            <Route path="/blog-home-1" element={<div>Blog Home 1</div>} />
+            <Route path="/blog-home-2" element={<div>Blog Home 2</div>} />
+            <Route path="/blog-post" element={<div>Blog Post</div>} />
+            <Route path="*" element={<AboutMe />} />
+          </Routes>
 
-export default App
+          <footer className="footer text-center py-4">
+					<small className="copyright">Template Copyright &copy; <a href="https://themes.3rdwavemedia.com/" target="_blank">3rd Wave Media</a></small>
+				</footer>
+      </div>
+    </Router>
+  );
+};
+
+export default App;
