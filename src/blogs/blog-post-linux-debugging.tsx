@@ -1,26 +1,5 @@
 import React from 'react';
 
-const codeBlockStyle: React.CSSProperties = {
-  border: '1px solid #e0e0e0',
-  borderRadius: '8px',
-  background: '#272822',
-  color: '#f8f8f2',
-  padding: '1rem',
-  fontFamily: 'Fira Mono, Menlo, Monaco, Consolas, monospace',
-  fontSize: '0.95rem',
-  overflowX: 'auto',
-  marginBottom: '1.5rem',
-};
-
-const keywordStyle: React.CSSProperties = {
-  color: '#66d9ef',
-  fontWeight: 600,
-};
-const commentStyle: React.CSSProperties = {
-  color: '#75715e',
-  fontStyle: 'italic',
-};
-
 const BlogPostLinuxDebugging: React.FC = () => (
   <>
     <article className="blog-post px-3 py-5 p-md-5">
@@ -78,15 +57,15 @@ const BlogPostLinuxDebugging: React.FC = () => (
           </ul>
 
           <h3>Example: Debugging a Memory Leak</h3>
-          <div style={codeBlockStyle}>
-            <span style={commentStyle}># List top memory-consuming processes</span><br />
-            <span style={keywordStyle}>ps</span> aux --sort=-%mem | <span style={keywordStyle}>head</span>
+          <div className="blog-code-block">
+            <span className="blog-comment"># List top memory-consuming processes</span><br />
+            <span className="blog-keyword">ps</span> aux --sort=-%mem | <span className="blog-keyword">head</span>
             <br /><br />
-            <span style={commentStyle}># List open files for a specific process (replace &lt;PID&gt; with the process ID)</span><br />
-            <span style={keywordStyle}>sudo lsof</span> -p &lt;PID&gt;
+            <span className="blog-comment"># List open files for a specific process (replace &lt;PID&gt; with the process ID)</span><br />
+            <span className="blog-keyword">sudo lsof</span> -p &lt;PID&gt;
             <br /><br />
-            <span style={commentStyle}># Check process memory status</span><br />
-            <span style={keywordStyle}>grep</span> VmRSS /proc/&lt;PID&gt;/status
+            <span className="blog-comment"># Check process memory status</span><br />
+            <span className="blog-keyword">grep</span> VmRSS /proc/&lt;PID&gt;/status
           </div>
           <p>In a recent incident, a web server was killed by the OOM killer. Using <code>ps</code> and <code>lsof</code>, I traced the leak to a runaway log file handler. Fix: rotate logs and patch the application.</p>
 
