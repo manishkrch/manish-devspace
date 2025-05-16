@@ -14,6 +14,17 @@ import BlogPostAIAutomationPlatforms from './blogs/blog-post-ai-automation-platf
 import BlogPostReactTypescriptBestPractices from './blogs/blog-post-react-typescript-best-practices';
 import BlogPostCloudMigrationLessons from './blogs/blog-post-cloud-migration-lessons';
 import BlogPostCareerGrowthTech from './blogs/blog-post-career-growth-tech';
+import ProjectAIAutomation from './projects/project-ai-automation';
+import ProjectCloudInfraAutomation from './projects/project-cloud-infra-automation';
+import ProjectCloudMigration from './projects/project-cloud-migration';
+import ProjectCustomerPortal from './projects/project-customer-portal';
+import ProjectDevOpsToolkit from './projects/project-devops-toolkit';
+import ProjectEmployeeSelfService from './projects/project-employee-self-service';
+import ProjectFieldServiceMobile from './projects/project-field-service-mobile';
+import ProjectIncidentResponse from './projects/project-incident-response';
+import ProjectInventoryWebApp from './projects/project-inventory-web-app';
+import ProjectLinuxDebugging from './projects/project-linux-debugging';
+import ProjectPortfolioWebsite from './projects/project-portfolio-website';
 
 const App: React.FC = () => {
   return (
@@ -36,6 +47,17 @@ const App: React.FC = () => {
             <Route path="/blog-post-react-typescript-best-practices" element={<BlogPostReactTypescriptBestPractices />} />
             <Route path="/blog-post-cloud-migration-lessons" element={<BlogPostCloudMigrationLessons />} />
             <Route path="/blog-post-career-growth-tech" element={<BlogPostCareerGrowthTech />} />
+            <Route path="/projects/project-ai-automation" element={<ProjectAIAutomation />} />
+            <Route path="/projects/project-cloud-infra-automation" element={<ProjectCloudInfraAutomation />} />
+            <Route path="/projects/project-cloud-migration" element={<ProjectCloudMigration />} />
+            <Route path="/projects/project-customer-portal" element={<ProjectCustomerPortal />} />
+            <Route path="/projects/project-devops-toolkit" element={<ProjectDevOpsToolkit />} />
+            <Route path="/projects/project-employee-self-service" element={<ProjectEmployeeSelfService />} />
+            <Route path="/projects/project-field-service-mobile" element={<ProjectFieldServiceMobile />} />
+            <Route path="/projects/project-incident-response" element={<ProjectIncidentResponse />} />
+            <Route path="/projects/project-inventory-web-app" element={<ProjectInventoryWebApp />} />
+            <Route path="/projects/project-linux-debugging" element={<ProjectLinuxDebugging />} />
+            <Route path="/projects/project-portfolio-website" element={<ProjectPortfolioWebsite />} />
             <Route path="*" element={<AboutMe />} />
           </Routes>
 

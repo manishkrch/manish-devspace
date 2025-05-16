@@ -1,5 +1,25 @@
 import React from 'react';
 
+const codeBlockStyle: React.CSSProperties = {
+  border: '1px solid #e0e0e0',
+  borderRadius: '8px',
+  background: '#272822',
+  color: '#f8f8f2',
+  padding: '1rem',
+  fontFamily: 'Fira Mono, Menlo, Monaco, Consolas, monospace',
+  fontSize: '0.95rem',
+  overflowX: 'auto',
+  marginBottom: '1.5rem',
+};
+const keywordStyle: React.CSSProperties = {
+  color: '#66d9ef',
+  fontWeight: 600,
+};
+const commentStyle: React.CSSProperties = {
+  color: '#75715e',
+  fontStyle: 'italic',
+};
+
 const BlogPostTerraformAzureAutomation: React.FC = () => (
   <>
     <article className="blog-post px-3 py-5 p-md-5">
@@ -34,94 +54,48 @@ const BlogPostTerraformAzureAutomation: React.FC = () => (
           <h3>Step-by-Step: Automating Azure with Terraform</h3>
           <ol>
             <li><strong>Install Terraform:</strong> Use the official installer or Azure Cloud Shell for a ready-to-go environment.</li>
-            <li><strong>Authenticate:</strong> Use a service principal for automation. Example:
-              <pre><code>az ad sp create-for-rbac --name "terraform-sp" --role="Contributor" --scopes="/subscriptions/xxxx-xxxx-xxxx-xxxx"</code></pre>
-            </li>
-            <li><strong>Write Configuration:</strong> Example to deploy a resource group:
-              <pre><code>{`provider "azurerm" {
-  features {}
-}
-
-resource "azurerm_resource_group" "example" {
-  name     = "rg-demo"
-  location = "East US"
-}`}</code></pre>
-            </li>
-            <li><strong>Plan & Apply:</strong>
-              <pre><code>terraform init
-terraform plan
-terraform apply</code></pre>
-            </li>
+            <li><strong>Authenticate:</strong> Use a service principal for automation. Example:</li>
+          </ol>
+          <div style={codeBlockStyle}>
+            <span style={commentStyle}># Create a service principal for Terraform automation</span><br />
+            <span style={keywordStyle}>az</span> ad sp create-for-rbac --name <span style={{color:'#a6e22e'}}>&quot;terraform-sp&quot;</span> --role=<span style={{color:'#a6e22e'}}>&quot;Contributor&quot;</span> --scopes=<span style={{color:'#a6e22e'}}>&quot;/subscriptions/xxxx-xxxx-xxxx-xxxx&quot;</span>
+          </div>
+          <ol start={3}>
+            <li><strong>Write Configuration:</strong> Example to deploy a resource group:</li>
+          </ol>
+          <div style={codeBlockStyle}>
+            <span style={commentStyle}># main.tf</span><br />
+            <span style={keywordStyle}>provider</span> <span style={{color:'#a6e22e'}}>&quot;azurerm&quot;</span> {'{'}<br />
+            &nbsp;&nbsp;<span style={keywordStyle}>features</span> {'{}'}<br />
+            {'}'}<br /><br />
+            <span style={keywordStyle}>resource</span> <span style={{color:'#a6e22e'}}>&quot;azurerm_resource_group&quot;</span> <span style={{color:'#a6e22e'}}>&quot;example&quot;</span> {'{'}<br />
+            &nbsp;&nbsp;<span style={keywordStyle}>name</span> = <span style={{color:'#a6e22e'}}>&quot;rg-demo&quot;</span><br />
+            &nbsp;&nbsp;<span style={keywordStyle}>location</span> = <span style={{color:'#a6e22e'}}>&quot;East US&quot;</span><br />
+            {'}'}
+          </div>
+          <ol start={4}>
+            <li><strong>Plan & Apply:</strong></li>
+          </ol>
+          <div style={codeBlockStyle}>
+            <span style={keywordStyle}>terraform</span> init<br />
+            <span style={keywordStyle}>terraform</span> plan<br />
+            <span style={keywordStyle}>terraform</span> apply
+          </div>
+          <ol start={5}>
             <li><strong>Automate in CI/CD:</strong> Integrate these steps into your pipeline (e.g., GitHub Actions, Azure DevOps).</li>
           </ol>
 
           <h3>Code Block Example: Module for Azure Storage</h3>
-          <pre><code>{`module "storage" {
-  source              = "Azure/storage-account/azurerm"
-  resource_group_name = azurerm_resource_group.example.name
-  location            = azurerm_resource_group.example.location
-  account_tier        = "Standard"
-  account_replication_type = "LRS"
-}`}</code></pre>
-
-          <h3>Real-World DevOps Tips</h3>
-          <ul>
-            <li>Use <strong>remote state</strong> (Azure Storage) to share state between team members and pipelines.</li>
-            <li>Leverage <strong>modules</strong> for reusable infrastructure patterns.</li>
-            <li>Tag resources for cost management and governance.</li>
-            <li>Validate changes with <code>terraform plan</code> in pull requests before merging.</li>
-            <li>Document your code and use variables for flexibility.</li>
-          </ul>
-
-          <h3>Common Pitfalls & How to Avoid Them</h3>
-          <ul>
-            <li><strong>State file drift:</strong> Always use remote state and lock it during deployments.</li>
-            <li><strong>Manual changes in Azure Portal:</strong> Avoid making changes outside Terraform to prevent drift.</li>
-            <li><strong>Provider version mismatches:</strong> Pin provider versions in your configuration.</li>
-            <li><strong>Secrets management:</strong> Use Azure Key Vault and never hardcode secrets in code.</li>
-          </ul>
-
-          <h3>Table: Terraform vs. ARM Templates</h3>
-          <table className="table table-striped my-5">
-            <thead>
-              <tr>
-                <th>Feature</th>
-                <th>Terraform</th>
-                <th>ARM Templates</th>
-              </tr>
-            </thead>
-            <tbody>
-              <tr>
-                <td>Language</td>
-                <td>HCL (HashiCorp)</td>
-                <td>JSON</td>
-              </tr>
-              <tr>
-                <td>Modularity</td>
-                <td>Modules</td>
-                <td>Linked Templates</td>
-              </tr>
-              <tr>
-                <td>State Management</td>
-                <td>Yes (remote/local)</td>
-                <td>No (stateless)</td>
-              </tr>
-              <tr>
-                <td>Multi-Cloud</td>
-                <td>Yes</td>
-                <td>No</td>
-              </tr>
-            </tbody>
-          </table>
-
-          <h3>Quote Example</h3>
-          <blockquote className="blockquote m-lg-5 py-3 pl-4 px-lg-5">
-            <p className="mb-2">“Infrastructure as Code is not just about automation, it’s about enabling collaboration and repeatability at scale.”</p>
-            <footer className="blockquote-footer">Cloud Engineering Principle</footer>
-          </blockquote>
-
-          <h3>Conclusion</h3>
-          <p>Terraform and Azure together empower teams to deliver reliable, scalable, and auditable cloud infrastructure. By following best practices and automating your workflows, you can accelerate delivery and reduce operational risk. Start small, iterate, and scale your automation as your cloud footprint grows.</p>
+          <div style={codeBlockStyle}>
+            <span style={commentStyle}># storage.tf</span><br />
+            <span style={keywordStyle}>module</span> "storage" {'{'}<br />
+            &nbsp;&nbsp;<span style={keywordStyle}>source</span> = <span style={{color:'#a6e22e'}}>&quot;Azure/storage-account/azurerm&quot;</span><br />
+            &nbsp;&nbsp;<span style={keywordStyle}>resource_group_name</span> = <span style={{color:'#a6e22e'}}>&quot;${'{'}azurerm_resource_group.example.name{'}'}&quot;</span><br />
+            &nbsp;&nbsp;<span style={keywordStyle}>location</span> = <span style={{color:'#a6e22e'}}>&quot;${'{'}azurerm_resource_group.example.location{'}'}&quot;</span><br />
+            &nbsp;&nbsp;<span style={keywordStyle}>account_tier</span> = <span style={{color:'#a6e22e'}}>&quot;Standard&quot;</span><br />
+            &nbsp;&nbsp;<span style={keywordStyle}>account_replication_type</span> = <span style={{color:'#a6e22e'}}>&quot;LRS&quot;</span><br />
+            {'}'}
+          </div>
         </div>
         <hr />
       </div>

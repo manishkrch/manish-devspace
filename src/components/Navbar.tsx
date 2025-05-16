@@ -89,29 +89,6 @@ const Navbar: React.FC = () => {
             <i className="fas fa-envelope-open-text fa-fw mr-2"></i>Contact
           </Link>
         </li>
-        <li className="nav-item dropdown">
-          {/* For dropdown, you can manage open state with React if needed */}
-          <span
-            className="nav-link dropdown-toggle"
-            role="button"
-            aria-haspopup="true"
-            aria-expanded="false"
-            style={{ cursor: 'pointer' }}
-          >
-            <i className="fas fa-cogs fa-fw mr-2"></i>More Pages
-          </span>
-          <div className="dropdown-menu">
-            <Link className="dropdown-item" to="/project">
-              Project Page
-            </Link>
-            <Link className="dropdown-item" to="/blog-home">
-              Blog Home
-            </Link>
-            <Link className="dropdown-item" to="/blog-post">
-              Blog Post
-            </Link>
-          </div>
-        </li>
       </ul>
 
       <div className="my-2">
