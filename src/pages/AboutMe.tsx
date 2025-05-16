@@ -13,10 +13,10 @@ const AboutMe: React.FC = () => {
 						<div className="tagline mb-3">Senior Software Engineer | Cloud & AI Enthusiast</div>
 						<div className="bio mb-4">
 							Hey! I'm Manish, a techie who loves building smart, scalable solutions and making life easier with automation and the cloud. I’m always up for a new challenge, learning something fresh, or helping others grow. When I’m not coding, you’ll find me hanging out with my adorable 9-month-old daughter, Dhriti—she’s the sweetest, funniest little bundle of joy and keeps me inspired every day!<br/><br/>
-							Want to know more about my work or projects? Check out my <a className="link-on-bg" href="resume.html">online resume</a> and <a className="link-on-bg" href="portfolio.html">project portfolio</a>.
+							Want to know more about my work or projects? Check out my <Link className="link-on-bg" to="/resume">online resume</Link> and <Link className="link-on-bg" to="/portfolio">project portfolio</Link>.
 						</div>
 						<div className="mb-4">
-							<a className="btn btn-primary mr-2 mb-3" href="portfolio.html"><i className="fas fa-arrow-alt-circle-right mr-2"></i><span className="d-none d-md-inline">View</span> Portfolio</a>
+							<Link className="btn btn-primary mr-2 mb-3" to="/portfolio"><i className="fas fa-arrow-alt-circle-right mr-2"></i><span className="d-none d-md-inline">View</span> Portfolio</Link>
 							<Link className="btn btn-secondary mb-3" to="/resume"><i className="fas fa-file-alt mr-2"></i><span className="d-none d-md-inline">View</span> Resume</Link>
 						</div>
 					</div>
@@ -28,71 +28,74 @@ const AboutMe: React.FC = () => {
 		<section className="overview-section p-3 p-lg-5">
 			<div className="container">
 				<h2 className="section-title font-weight-bold mb-3">What I do</h2>
-				<div className="section-intro mb-5">With over a decade of experience, I specialize in cloud, AI, and automation—delivering impactful solutions for global clients. My expertise spans Azure, AWS, .NET, JavaScript, and DevOps. I love mentoring, open source, and exploring new tech. And when I’m not coding, you’ll find me making my daughter Dhriti laugh! Want to know more? Check out my <a href="resume.html">online resume</a> and <a href="portfolio.html">project portfolio</a>.</div>
+				<div className="section-intro mb-5">
+					With over a decade of experience, I specialize in cloud, DevOps automation, and AI-powered solutions—delivering impactful results for global clients. My expertise spans Azure, AWS, .NET, JavaScript, React, and infrastructure as code (Terraform, CloudFormation). I build scalable web and mobile apps, automate cloud infrastructure, and solve production issues on Linux. I love mentoring, open source, and exploring new tech. Want to know more? Check out my <Link to="/resume">online resume</Link> and <Link to="/portfolio">project portfolio</Link>.
+				</div>
 				<div className="row">
 					<div className="item col-6 col-lg-3">
 						<div className="item-inner">
-							<div className="item-icon"><i className="fab fa-js-square"></i></div>
-							<h3 className="item-title">Vanilla JavaScript</h3>
-							<div className="item-desc">List skills/technologies here. You can change the icon above to any of the 1500+ <a className="theme-link" href="https://fontawesome.com/" target="_blank">FontAwesome 5 free icons</a> available. Aenean commodo ligula eget dolor.</div>
+							<div className="item-icon mb-2"><img src="/assets/images/project/project-1.jpg" alt="Cloud & DevOps" style={{width: '40px', borderRadius: '8px'}} /> <i className="fab fa-cloud ml-2"></i></div>
+							<h3 className="item-title">Cloud & DevOps Automation</h3>
+							<div className="item-desc">Automating cloud infrastructure with <strong>AWS</strong>, <strong>Azure</strong>, <strong>Terraform</strong>, and <strong>CloudFormation</strong>. Building CI/CD pipelines, monitoring, and incident response for reliable, scalable systems.</div>
 						</div>
 					</div>
 					<div className="item col-6 col-lg-3">
 						<div className="item-inner">
-							<div className="item-icon"><i className="fab fa-angular mr-2"></i><i className="fab fa-react mr-2"></i><i className="fab fa-vuejs"></i></div>
-							<h3 className="item-title">Angular, React &amp;  Vue</h3>
-							<div className="item-desc">List skills/technologies here. You can change the icon above to any of the 1500+ <a className="theme-link" href="https://fontawesome.com/" target="_blank">FontAwesome 5 free icons</a> available. Aenean commodo ligula eget dolor.  </div>
-						</div>
-					</div>
-					
-					<div className="item col-6 col-lg-3">
-						<div className="item-inner">
-							<div className="item-icon"><i className="fab fa-node-js"></i></div>
-							<h3 className="item-title">Node.js</h3>
-							<div className="item-desc">List skills/technologies here. You can change the icon above to any of the 1500+ <a className="theme-link" href="https://fontawesome.com/" target="_blank">FontAwesome 5 free icons</a> available. Aenean commodo ligula eget dolor.  </div>
-						</div>
-					</div>
-					
-					<div className="item col-6 col-lg-3">
-						<div className="item-inner">
-							<div className="item-icon"><i className="fab fa-python"></i></div>
-							<h3 className="item-title">Python &amp; Django</h3>
-							<div className="item-desc">List skills/technologies here. You can change the icon above to any of the 1500+ <a className="theme-link" href="https://fontawesome.com/" target="_blank">FontAwesome 5 free icons</a> available. Aenean commodo ligula eget dolor.  </div>
+							<div className="item-icon mb-2"><img src="/assets/images/project/project-5.jpg" alt="AI & Automation" style={{width: '40px', borderRadius: '8px'}} /> <i className="fas fa-robot ml-2"></i></div>
+							<h3 className="item-title">AI & Automation</h3>
+							<div className="item-desc">Designing AI-powered automation platforms using Azure, Python, and OpenAI. Streamlining business processes and enabling intelligent document processing and analytics.</div>
 						</div>
 					</div>
 					<div className="item col-6 col-lg-3">
 						<div className="item-inner">
-							<div className="item-icon"><i className="fab fa-php"></i></div>
-							<h3 className="item-title">PHP</h3>
-							<div className="item-desc">List skills/technologies here. You can change the icon above to any of the 1500+ <a className="theme-link" href="https://fontawesome.com/" target="_blank">FontAwesome 5 free icons</a> available. Aenean commodo ligula eget dolor.  </div>
+							<div className="item-icon mb-2"><img src="/assets/images/project/project-case-study-thumb.jpg" alt="Web & Mobile Apps" style={{width: '40px', borderRadius: '8px'}} /> <i className="fas fa-laptop-code ml-2"></i></div>
+							<h3 className="item-title">Web & Mobile Apps</h3>
+							<div className="item-desc">Building modern web and mobile apps with <strong>React</strong>, <strong>Python</strong>, <strong>C#</strong>, .NET, and cloud APIs. Focused on performance, security, and user experience.</div>
 						</div>
 					</div>
 					<div className="item col-6 col-lg-3">
 						<div className="item-inner">
-							<div className="item-icon"><i className="fab fa-npm mr-2"></i><i className="fab fa-gulp mr-2"></i><i className="fab fa-grunt"></i></div>
-							<h3 className="item-title">npm, Gulp &amp; Grunt</h3>
-							<div className="item-desc">List skills/technologies here. You can change the icon above to any of the 1500+ <a className="theme-link" href="https://fontawesome.com/" target="_blank">FontAwesome 5 free icons</a> available. Aenean commodo ligula eget dolor.  </div>
+							<div className="item-icon mb-2"><img src="/assets/images/project/project-7.jpg" alt="Linux & Production Engineering" style={{width: '40px', borderRadius: '8px'}} /> <i className="fab fa-linux ml-2"></i></div>
+							<h3 className="item-title">Linux & Production Engineering</h3>
+							<div className="item-desc">Debugging and automating production systems on Linux. Building monitoring suites, log aggregation, and root cause analysis tools for mission-critical environments.</div>
+						</div>
+					</div>
+				</div>
+				<div className="row mt-4">
+					<div className="item col-6 col-lg-3">
+						<div className="item-inner">
+							<div className="item-icon mb-2">
+							  <img src="/src/assets/react.svg" alt="React" style={{width: '32px', borderRadius: '8px', background: '#fff', padding: '2px'}} />
+							  <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg" alt="Python" style={{width: '32px', marginLeft: '4px'}} />
+							  <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/csharp/csharp-original.svg" alt="C#" style={{width: '32px', marginLeft: '4px'}} />
+							  <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg" alt="JavaScript" style={{width: '32px', marginLeft: '4px'}} />
+							  <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/typescript/typescript-original.svg" alt="TypeScript" style={{width: '32px', marginLeft: '4px'}} />
+							  <i className="fas fa-code ml-2"></i>
+							</div>
+							<h3 className="item-title">Programming Languages</h3>
+							<div className="item-desc"><strong>Python</strong>, <strong>C#</strong>, <strong>JavaScript</strong>, <strong>TypeScript</strong>, <strong>React</strong></div>
 						</div>
 					</div>
 					<div className="item col-6 col-lg-3">
 						<div className="item-inner">
-							<div className="item-icon"><i className="fab fa-html5 mr-2"></i><i className="fab fa-css3-alt"></i></div>
-							<h3 className="item-title">HTML &amp; CSS</h3>
-							<div className="item-desc">List skills/technologies here. You can change the icon above to any of the 1500+ <a className="theme-link" href="https://fontawesome.com/" target="_blank">FontAwesome 5 free icons</a> available. Aenean commodo ligula eget dolor.  </div>
+							<div className="item-icon mb-2"><img src="/assets/images/project/project-2.jpg" alt="Cloud Technologies" style={{width: '40px', borderRadius: '8px'}} /> <i className="fab fa-aws ml-2"></i></div>
+							<h3 className="item-title">Cloud Technologies</h3>
+							<div className="item-desc"><strong>AWS</strong>, <strong>Azure</strong>, <strong>Azure DevOps</strong>, <strong>Serverless</strong></div>
 						</div>
 					</div>
 					<div className="item col-6 col-lg-3">
 						<div className="item-inner">
-							<div className="item-icon"><i className="fab fa-sass mr-2"></i><i className="fab fa-less"></i></div>
-							<h3 className="item-title">Sass &amp; LESS</h3>
-							<div className="item-desc">List skills/technologies here. You can change the icon above to any of the 1500+ <a className="theme-link" href="https://fontawesome.com/" target="_blank">FontAwesome 5 free icons</a> available. Aenean commodo ligula eget dolor.  </div>
+							<div className="item-icon mb-2"><img src="/assets/images/project/project-4.jpg" alt="Automation Tools" style={{width: '40px', borderRadius: '8px'}} /> <i className="fas fa-cogs ml-2"></i></div>
+							<h3 className="item-title">Automation Tools</h3>
+							<div className="item-desc"><strong>Terraform</strong>, <strong>CloudFormation</strong>, <strong>CI/CD</strong>, <strong>GitHub Actions</strong></div>
 						</div>
 					</div>
 				</div>
 				<div className="text-center py-3">
-                    <Link to="/services" className="btn btn-primary"><i className="fas fa-arrow-alt-circle-right mr-2"></i>Services &amp; Pricing
-					
-				</Link></div>
+				  <Link to="/services" className="btn btn-primary">
+					<i className="fas fa-arrow-alt-circle-right mr-2"></i>Services & Pricing
+				  </Link>
+				</div>
 				
 			</div>
 		</section>

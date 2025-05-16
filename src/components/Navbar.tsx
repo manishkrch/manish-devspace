@@ -66,6 +66,7 @@ const Navbar: React.FC = () => {
         <li className={`nav-item${location.pathname === '/portfolio' ? ' active' : ''}`}>
           <Link className="nav-link" to="/portfolio">
             <i className="fas fa-laptop-code fa-fw mr-2"></i>Portfolio
+            {location.pathname === '/portfolio' && <span className="sr-only">(current)</span>}
           </Link>
         </li>
         <li className={`nav-item${location.pathname === '/services' ? ' active' : ''}`}>
@@ -103,11 +104,8 @@ const Navbar: React.FC = () => {
             <Link className="dropdown-item" to="/project">
               Project Page
             </Link>
-            <Link className="dropdown-item" to="/blog-home-1">
-              Blog Home 1
-            </Link>
-            <Link className="dropdown-item" to="/blog-home-2">
-              Blog Home 2
+            <Link className="dropdown-item" to="/blog-home">
+              Blog Home
             </Link>
             <Link className="dropdown-item" to="/blog-post">
               Blog Post

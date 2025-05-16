@@ -58,39 +58,6 @@ const faqData = [
   },
 ];
 
-// const serviceFeatures = [
-//   {
-//     name: 'Basic',
-//     price: '$900',
-//     details: 'A small app or website, ideal for MVPs, landing pages, or personal projects. Includes requirements gathering, setup, deployment, and basic support.',
-//     features: [
-//       'Perfect for simple websites or MVPs: 1-3 pages, responsive design, and a basic contact form. SEO best practices are included, and your site will be deployed to your preferred host. One revision is provided to ensure satisfaction.'
-//     ],
-//     delivery: '7 days',
-//     cta: 'Book Now',
-//   },
-//   {
-//     name: 'Standard',
-//     price: '$2500',
-//     details: 'A medium-sized app with custom features, integrations, and responsive design. Includes user authentication, API integration, testing, and documentation.',
-//     features: [
-//       'Ideal for growing businesses: Up to 8 custom pages/components, modern UI/UX, user authentication, and integration with APIs or third-party services. Automated tests, documentation, and two rounds of revisions are included.'
-//     ],
-//     delivery: '14 days',
-//     cta: 'Book Now',
-//   },
-//   {
-//     name: 'Premium',
-//     price: '$5000+',
-//     details: 'A complex, enterprise-grade solution with advanced integrations, automation, and ongoing support. Ideal for SaaS, dashboards, or AI-powered apps.',
-//     features: [
-//       'For advanced needs: Unlimited pages/components, AI and cloud integrations, role-based access, performance optimization, and CI/CD DevOps setup. Includes ongoing support, monitoring, and at least five revisions for continuous improvement.'
-//     ],
-//     delivery: '2 - 3 months',
-//     cta: 'Get A Quote',
-//   },
-// ];
-
 const Services: React.FC = () => {
   const [openIndex, setOpenIndex] = useState<number | null>(null);
 
