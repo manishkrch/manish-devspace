@@ -47,17 +47,17 @@ const App: React.FC = () => {
             <Route path="/blog-post-react-typescript-best-practices" element={<BlogPostReactTypescriptBestPractices />} />
             <Route path="/blog-post-cloud-migration-lessons" element={<BlogPostCloudMigrationLessons />} />
             <Route path="/blog-post-career-growth-tech" element={<BlogPostCareerGrowthTech />} />
-            <Route path="/projects/project-ai-automation" element={<ProjectAIAutomation />} />
-            <Route path="/projects/project-cloud-infra-automation" element={<ProjectCloudInfraAutomation />} />
-            <Route path="/projects/project-cloud-migration" element={<ProjectCloudMigration />} />
-            <Route path="/projects/project-customer-portal" element={<ProjectCustomerPortal />} />
-            <Route path="/projects/project-devops-toolkit" element={<ProjectDevOpsToolkit />} />
-            <Route path="/projects/project-employee-self-service" element={<ProjectEmployeeSelfService />} />
-            <Route path="/projects/project-field-service-mobile" element={<ProjectFieldServiceMobile />} />
-            <Route path="/projects/project-incident-response" element={<ProjectIncidentResponse />} />
-            <Route path="/projects/project-inventory-web-app" element={<ProjectInventoryWebApp />} />
-            <Route path="/projects/project-linux-debugging" element={<ProjectLinuxDebugging />} />
-            <Route path="/projects/project-portfolio-website" element={<ProjectPortfolioWebsite />} />
+            <Route path="/project-ai-automation" element={<ProjectAIAutomation />} />
+            <Route path="/project-cloud-infra-automation" element={<ProjectCloudInfraAutomation />} />
+            <Route path="/project-cloud-migration" element={<ProjectCloudMigration />} />
+            <Route path="/project-customer-portal" element={<ProjectCustomerPortal />} />
+            <Route path="/project-devops-toolkit" element={<ProjectDevOpsToolkit />} />
+            <Route path="/project-employee-self-service" element={<ProjectEmployeeSelfService />} />
+            <Route path="/project-field-service-mobile" element={<ProjectFieldServiceMobile />} />
+            <Route path="/project-incident-response" element={<ProjectIncidentResponse />} />
+            <Route path="/project-inventory-web-app" element={<ProjectInventoryWebApp />} />
+            <Route path="/project-linux-debugging" element={<ProjectLinuxDebugging />} />
+            <Route path="/project-portfolio-website" element={<ProjectPortfolioWebsite />} />
             <Route path="*" element={<AboutMe />} />
           </Routes>
 

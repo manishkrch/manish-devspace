@@ -6,7 +6,7 @@ const projects = [
     description:
       'Enterprise automation platform leveraging Azure, Python, and AI/ML for workflow automation, document processing, and analytics. Features OpenAI LLM integration and Power Platform orchestration.',
     image: '/assets/images/project/project-1.jpg',
-    link: '/projects/project-ai-automation',
+    link: '/project-ai-automation',
     client: 'Microsoft',
     categories: ['webapp', 'backend', 'automation', 'devops'],
   },
@@ -15,7 +15,7 @@ const projects = [
     description:
       'Toolkit for accelerating cloud migration of legacy apps using AWS, Terraform, and Docker. Automated infra provisioning, deployment, and monitoring for seamless migration.',
     image: '/assets/images/project/project-2.jpg',
-    link: '/projects/project-cloud-migration',
+    link: '/project-cloud-migration',
     client: 'Thomson Reuters',
     categories: ['backend', 'automation', 'devops', 'linux'],
   },
@@ -24,7 +24,7 @@ const projects = [
     description:
       'Automated cloud infrastructure provisioning and management using AWS CloudFormation, Terraform, and Azure Resource Manager. Enabled rapid, consistent, and secure deployments for multi-cloud environments.',
     image: '/assets/images/project/project-4.jpg',
-    link: '/projects/project-cloud-infra-automation',
+    link: '/project-cloud-infra-automation',
     client: 'Microsoft / Thomson Reuters',
     categories: ['devops', 'automation', 'backend'],
   },
@@ -33,7 +33,7 @@ const projects = [
     description:
       'A set of reusable scripts and CI/CD templates for automating build, test, and deployment pipelines across Azure DevOps and GitHub Actions. Includes IaC modules and security automation.',
     image: '/assets/images/project/project-5.jpg',
-    link: '/projects/project-devops-toolkit',
+    link: '/project-devops-toolkit',
     client: 'Open Source',
     categories: ['devops', 'automation', 'backend', 'linux'],
   },
@@ -42,7 +42,7 @@ const projects = [
     description:
       'Automated incident response workflows using Python, Azure Logic Apps, and ServiceNow integration. Reduced MTTR and improved reliability for mission-critical systems.',
     image: '/assets/images/project/project-6.jpg',
-    link: '/projects/project-incident-response',
+    link: '/project-incident-response',
     client: 'Thomson Reuters',
     categories: ['automation', 'devops', 'backend', 'linux'],
   },
@@ -51,7 +51,7 @@ const projects = [
     description:
       'Custom toolkit for debugging and troubleshooting production issues on Linux servers. Includes log aggregation, process monitoring, and automated root cause analysis scripts.',
     image: '/assets/images/project/project-7.jpg',
-    link: '/projects/project-linux-debugging',
+    link: '/project-linux-debugging',
     client: 'Microsoft',
     categories: ['linux', 'devops', 'backend'],
   },
@@ -60,7 +60,7 @@ const projects = [
     description:
       'A secure, scalable customer portal for enterprise clients, built with React, .NET Core, and Azure. Features SSO, real-time notifications, and advanced analytics dashboards.',
     image: '/assets/images/project/project-8.jpg',
-    link: '/projects/project-customer-portal',
+    link: '/project-customer-portal',
     client: 'Microsoft',
     categories: ['webapp', 'frontend', 'backend'],
   },
@@ -69,7 +69,7 @@ const projects = [
     description:
       'Cross-platform mobile app for field engineers to manage tasks, capture data, and sync with backend systems. Built with React Native and integrated with Azure cloud APIs.',
     image: '/assets/images/project/project-3.jpg',
-    link: '/projects/project-field-service-mobile',
+    link: '/project-field-service-mobile',
     client: 'Thomson Reuters',
     categories: ['mobileapp', 'backend', 'devops'],
   },
@@ -78,7 +78,7 @@ const projects = [
     description:
       'Web application for real-time inventory tracking and analytics, built with React, Node.js, and MongoDB. Integrated with cloud APIs for seamless data sync and reporting.',
     image: '/assets/images/project/project-2.jpg',
-    link: '/projects/project-inventory-web-app',
+    link: '/project-inventory-web-app',
     client: 'Hitachi Vantara',
     categories: ['webapp', 'frontend', 'backend'],
   },
@@ -87,7 +87,7 @@ const projects = [
     description:
       'Mobile app for employees to manage leave, attendance, and HR requests. Built with Flutter and integrated with backend REST APIs and Azure AD authentication.',
     image: '/assets/images/project/project-8.jpg',
-    link: '/projects/project-employee-self-service',
+    link: '/project-employee-self-service',
     client: 'Thomson Reuters',
     categories: ['mobileapp', 'backend'],
   },
@@ -96,7 +96,7 @@ const projects = [
     description:
       'Modern, responsive portfolio built with React, TypeScript, and Vite. Showcases projects, resume, and contact info. Designed for performance and accessibility.',
     image: '/assets/images/project/project-case-study-thumb.jpg',
-    link: '/projects/project-portfolio-website',
+    link: '/project-portfolio-website',
     client: 'Personal',
     categories: ['frontend', 'webapp'],
   },
