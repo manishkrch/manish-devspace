@@ -1,5 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import Subscribe from './Subscribe';
 
 const blogPosts = [
   {
@@ -68,15 +69,9 @@ const BlogHome: React.FC = () => (
   <>
     <section className="cta-section theme-bg-light py-5">
       <div className="container text-center single-col-max-width">
-        <h2 className="heading">Insights on Cloud, DevOps, AI & Engineering Leadership</h2>
-        <div className="intro">Welcome to my blog! Here I share practical guides, lessons learned, and stories from my journey as a cloud architect, DevOps engineer, and AI enthusiast. Subscribe for the latest posts on automation, cloud, and career growth.</div>
-        <form className="signup-form form-inline justify-content-center pt-3">
-          <div className="form-group">
-            <label className="sr-only" htmlFor="semail">Your email</label>
-            <input type="email" id="semail" name="semail1" className="form-control mr-md-1 semail" placeholder="Enter email" />
-          </div>
-          <button type="submit" className="btn btn-primary">Subscribe</button>
-        </form>
+        <h2 className="heading">Cloud, DevOps & AI Insights</h2>
+        <div className="intro">Actionable tips and real-world lessons on automation, cloud, and engineering leadership—straight from my experience in the field.</div>
+        <Subscribe />
       </div>
     </section>
     <section className="blog-list px-3 py-5 p-md-5">
@@ -98,6 +93,7 @@ const BlogHome: React.FC = () => (
             </div>
           </div>
         ))}
+        <Subscribe />
         <nav className="blog-nav nav nav-justified my-5">
           <a className="nav-link-prev nav-item nav-link d-none rounded-left" href="#">Previous<i className="arrow-prev fas fa-long-arrow-alt-left"></i></a>
           <a className="nav-link-next nav-item nav-link rounded" href="#">Next<i className="arrow-next fas fa-long-arrow-alt-right"></i></a>

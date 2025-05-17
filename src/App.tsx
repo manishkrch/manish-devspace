@@ -25,6 +25,7 @@ import ProjectIncidentResponse from './projects/project-incident-response';
 import ProjectInventoryWebApp from './projects/project-inventory-web-app';
 import ProjectLinuxDebugging from './projects/project-linux-debugging';
 import ProjectPortfolioWebsite from './projects/project-portfolio-website';
+import Subscribe from './pages/Subscribe';
 
 const App: React.FC = () => {
   return (
@@ -58,6 +59,7 @@ const App: React.FC = () => {
             <Route path="/project-inventory-web-app" element={<ProjectInventoryWebApp />} />
             <Route path="/project-linux-debugging" element={<ProjectLinuxDebugging />} />
             <Route path="/project-portfolio-website" element={<ProjectPortfolioWebsite />} />
+            <Route path="/subscribe" element={<Subscribe />} />
             <Route path="*" element={<AboutMe />} />
           </Routes>
 
