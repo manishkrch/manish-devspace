@@ -93,7 +93,6 @@ const BlogHome: React.FC = () => (
             </div>
           </div>
         ))}
-        <Subscribe />
         <nav className="blog-nav nav nav-justified my-5">
           <a className="nav-link-prev nav-item nav-link d-none rounded-left" href="#">Previous<i className="arrow-prev fas fa-long-arrow-alt-left"></i></a>
           <a className="nav-link-next nav-item nav-link rounded" href="#">Next<i className="arrow-next fas fa-long-arrow-alt-right"></i></a>
