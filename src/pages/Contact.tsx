@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import { Helmet } from 'react-helmet-async';
 
 // Replace with your actual deployed Google Apps Script Web App URL
 const GOOGLE_SCRIPT_URL = "https://script.google.com/macros/s/AKfycbx8AMVGuIBzZ7Qrh34fjjP-bsAexuW3HBIwlwr-pqbZ6hMU_EU47Ykwy-fpj4JeUtXh/exec";
@@ -59,6 +60,26 @@ const Contact: React.FC = () => {
 
   return (
     <>
+      <Helmet>
+        <title>Contact | Manish Kumar</title>
+        <meta name="description" content="Contact Manish Kumar for project inquiries, collaborations, or just to say hi. Get in touch via the contact form or email." />
+        <meta name="robots" content="index, follow" />
+        <meta name="author" content="Manish Kumar Choudhary" />
+        <meta name="copyright" content="© 2025 Manish Kumar Choudhary" />
+        <meta name="generator" content="React, Vite, TypeScript" />
+        <meta name="ai-content" content="false" />
+        <meta property="og:title" content="Contact | Manish Kumar" />
+        <meta property="og:description" content="Contact Manish Kumar for project inquiries, collaborations, or just to say hi. Get in touch via the contact form or email." />
+        <meta property="og:type" content="website" />
+        <meta property="og:url" content="https://manish-devspace.vercel.app/contact" />
+        <meta property="og:image" content="https://manish-devspace.vercel.app/assets/images/profile1.png" />
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:title" content="Contact | Manish Kumar" />
+        <meta name="twitter:description" content="Contact Manish Kumar for project inquiries, collaborations, or just to say hi. Get in touch via the contact form or email." />
+        <meta name="twitter:image" content="https://manish-devspace.vercel.app/assets/images/profile1.png" />
+        <meta name="twitter:site" content="@manishkrch" />
+        <link rel="canonical" href="https://manish-devspace.vercel.app/contact" />
+      </Helmet>
       <section className="cta-section theme-bg-light py-5">
         <div className="container text-center single-col-max-width">
           <h2 className="heading">Contact</h2>

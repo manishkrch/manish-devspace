@@ -1,9 +1,30 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import { Helmet } from 'react-helmet-async';
 
 const AboutMe: React.FC = () => {
   return (
 	<>
+	  <Helmet>
+      <title>About Me | Manish Kumar</title>
+      <meta name="description" content="Learn more about Manish Kumar, a passionate full-stack developer specializing in scalable web applications." />
+      <meta name="robots" content="index, follow" />
+      <meta name="author" content="Manish Kumar Choudhary" />
+      <meta name="copyright" content="© 2025 Manish Kumar Choudhary" />
+      <meta name="generator" content="React, Vite, TypeScript" />
+      <meta name="ai-content" content="false" />
+      <meta property="og:title" content="About Me | Manish Kumar" />
+      <meta property="og:description" content="Learn more about Manish Kumar, a passionate full-stack developer specializing in scalable web applications." />
+      <meta property="og:type" content="website" />
+      <meta property="og:url" content="https://manish-devspace.vercel.app/about" />
+      <meta property="og:image" content="https://manish-devspace.vercel.app/assets/images/profile1.png" />
+      <meta name="twitter:card" content="summary_large_image" />
+      <meta name="twitter:title" content="About Me | Manish Kumar" />
+      <meta name="twitter:description" content="Learn more about Manish Kumar, a passionate full-stack developer specializing in scalable web applications." />
+      <meta name="twitter:image" content="https://manish-devspace.vercel.app/assets/images/profile1.png" />
+      <meta name="twitter:site" content="@manishkrch" />
+      <link rel="canonical" href="https://manish-devspace.vercel.app/about" />
+    </Helmet>
 	  <section className="about-me-section p-3 p-lg-5 theme-bg-light">
 			<div className="container">
 				<div className="profile-teaser media flex-column flex-lg-row">

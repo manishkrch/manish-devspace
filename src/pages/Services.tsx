@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { Helmet } from 'react-helmet-async';
 
 const faqData = [
   {
@@ -67,6 +68,26 @@ const Services: React.FC = () => {
 
   return (
     <>
+      <Helmet>
+        <title>Services & Pricing | Manish Kumar</title>
+        <meta name="description" content="Discover Manish Kumar's web, cloud, and AI services. View packages, pricing, and what's included for your project." />
+        <meta name="robots" content="index, follow" />
+        <meta name="author" content="Manish Kumar Choudhary" />
+        <meta name="copyright" content="© 2025 Manish Kumar Choudhary" />
+        <meta name="generator" content="React, Vite, TypeScript" />
+        <meta name="ai-content" content="false" />
+        <meta property="og:title" content="Services & Pricing | Manish Kumar" />
+        <meta property="og:description" content="Discover Manish Kumar's web, cloud, and AI services. View packages, pricing, and what's included for your project." />
+        <meta property="og:type" content="website" />
+        <meta property="og:url" content="https://manish-devspace.vercel.app/services" />
+        <meta property="og:image" content="https://manish-devspace.vercel.app/assets/images/profile1.png" />
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:title" content="Services & Pricing | Manish Kumar" />
+        <meta name="twitter:description" content="Discover Manish Kumar's web, cloud, and AI services. View packages, pricing, and what's included for your project." />
+        <meta name="twitter:image" content="https://manish-devspace.vercel.app/assets/images/profile1.png" />
+        <meta name="twitter:site" content="@manishkrch" />
+        <link rel="canonical" href="https://manish-devspace.vercel.app/services" />
+      </Helmet>
       <section className="cta-section theme-bg-light py-5">
         <div className="container text-center single-col-max-width">
           <h2 className="heading">Services & Pricing</h2>

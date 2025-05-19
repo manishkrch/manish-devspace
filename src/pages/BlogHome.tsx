@@ -1,6 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import Subscribe from '../components/Subscribe';
+import { Helmet } from 'react-helmet-async';
 
 const blogPosts = [
   {
@@ -67,6 +68,26 @@ const blogPosts = [
 
 const BlogHome: React.FC = () => (
   <>
+    <Helmet>
+      <title>Blog | Manish Kumar</title>
+      <meta name="description" content="Read actionable tips and real-world lessons on automation, cloud, and engineering leadership from Manish Kumar." />
+      <meta name="robots" content="index, follow" />
+      <meta name="author" content="Manish Kumar Choudhary" />
+      <meta name="copyright" content="© 2025 Manish Kumar Choudhary" />
+      <meta name="generator" content="React, Vite, TypeScript" />
+      <meta name="ai-content" content="false" />
+      <meta property="og:title" content="Blog | Manish Kumar" />
+      <meta property="og:description" content="Read actionable tips and real-world lessons on automation, cloud, and engineering leadership from Manish Kumar." />
+      <meta property="og:type" content="website" />
+      <meta property="og:url" content="https://manish-devspace.vercel.app/blog" />
+      <meta property="og:image" content="https://manish-devspace.vercel.app/assets/images/profile1.png" />
+      <meta name="twitter:card" content="summary_large_image" />
+      <meta name="twitter:title" content="Blog | Manish Kumar" />
+      <meta name="twitter:description" content="Read actionable tips and real-world lessons on automation, cloud, and engineering leadership from Manish Kumar." />
+      <meta name="twitter:image" content="https://manish-devspace.vercel.app/assets/images/profile1.png" />
+      <meta name="twitter:site" content="@manishkrch" />
+      <link rel="canonical" href="https://manish-devspace.vercel.app/blog" />
+    </Helmet>
     <section className="cta-section theme-bg-light py-5">
       <div className="container text-center single-col-max-width">
         <h2 className="heading">Cloud, DevOps & AI Insights</h2>
