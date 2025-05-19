@@ -71,6 +71,7 @@ const Services: React.FC = () => {
       <Helmet>
         <title>Services & Pricing | Manish Kumar</title>
         <meta name="description" content="Discover Manish Kumar's web, cloud, and AI services. View packages, pricing, and what's included for your project." />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
         <meta name="robots" content="index, follow" />
         <meta name="author" content="Manish Kumar Choudhary" />
         <meta name="copyright" content="© 2025 Manish Kumar Choudhary" />
@@ -82,6 +83,8 @@ const Services: React.FC = () => {
         <meta property="og:url" content="https://manish-devspace.vercel.app/services" />
         <meta property="og:image" content="https://manish-devspace.vercel.app/assets/images/profile1.png" />
         <meta name="twitter:card" content="summary_large_image" />
+        <meta property="twitter:domain" content="manish-devspace.vercel.app" />
+        <meta property="twitter:url" content="https://manish-devspace.vercel.app/services" />
         <meta name="twitter:title" content="Services & Pricing | Manish Kumar" />
         <meta name="twitter:description" content="Discover Manish Kumar's web, cloud, and AI services. View packages, pricing, and what's included for your project." />
         <meta name="twitter:image" content="https://manish-devspace.vercel.app/assets/images/profile1.png" />

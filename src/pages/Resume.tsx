@@ -7,6 +7,7 @@ const Resume: React.FC = () => {
 	<Helmet>
 	  <title>Resume | Manish Kumar</title>
 	  <meta name="description" content="View Manish Kumar's resume, skills, and professional experience in software, cloud, and AI engineering." />
+	  <meta name="viewport" content="width=device-width, initial-scale=1" />
 	  <meta name="robots" content="index, follow" />
 	  <meta name="author" content="Manish Kumar Choudhary" />
 	  <meta name="copyright" content="© 2025 Manish Kumar Choudhary" />
@@ -18,6 +19,8 @@ const Resume: React.FC = () => {
 	  <meta property="og:url" content="https://manish-devspace.vercel.app/resume" />
 	  <meta property="og:image" content="https://manish-devspace.vercel.app/assets/images/profile1.png" />
 	  <meta name="twitter:card" content="summary_large_image" />
+	  <meta property="twitter:domain" content="manish-devspace.vercel.app" />
+	  <meta property="twitter:url" content="https://manish-devspace.vercel.app/resume" />
 	  <meta name="twitter:title" content="Resume | Manish Kumar" />
 	  <meta name="twitter:description" content="View Manish Kumar's resume, skills, and professional experience in software, cloud, and AI engineering." />
 	  <meta name="twitter:image" content="https://manish-devspace.vercel.app/assets/images/profile1.png" />

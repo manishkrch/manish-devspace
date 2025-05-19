@@ -6,21 +6,24 @@ const AboutMe: React.FC = () => {
   return (
 	<>
 	  <Helmet>
-      <title>About Me | Manish Kumar</title>
-      <meta name="description" content="Learn more about Manish Kumar, a passionate full-stack developer specializing in scalable web applications." />
+      <title>Beyond the Brackets – Manish’s Dev Playground</title>
+      <meta name="description" content="Manish Kumar's Dev Playground: Cloud, DevOps, AI, and full-stack engineering insights, projects, and portfolio." />
+      <meta name="viewport" content="width=device-width, initial-scale=1" />
       <meta name="robots" content="index, follow" />
       <meta name="author" content="Manish Kumar Choudhary" />
       <meta name="copyright" content="© 2025 Manish Kumar Choudhary" />
       <meta name="generator" content="React, Vite, TypeScript" />
       <meta name="ai-content" content="false" />
-      <meta property="og:title" content="About Me | Manish Kumar" />
-      <meta property="og:description" content="Learn more about Manish Kumar, a passionate full-stack developer specializing in scalable web applications." />
-      <meta property="og:type" content="website" />
       <meta property="og:url" content="https://manish-devspace.vercel.app/about" />
+      <meta property="og:type" content="website" />
+      <meta property="og:title" content="Beyond the Brackets – Manish’s Dev Playground" />
+      <meta property="og:description" content="Manish Kumar's Dev Playground: Cloud, DevOps, AI, and full-stack engineering insights, projects, and portfolio." />
       <meta property="og:image" content="https://manish-devspace.vercel.app/assets/images/profile1.png" />
       <meta name="twitter:card" content="summary_large_image" />
-      <meta name="twitter:title" content="About Me | Manish Kumar" />
-      <meta name="twitter:description" content="Learn more about Manish Kumar, a passionate full-stack developer specializing in scalable web applications." />
+      <meta property="twitter:domain" content="manish-devspace.vercel.app" />
+      <meta property="twitter:url" content="https://manish-devspace.vercel.app/about" />
+      <meta name="twitter:title" content="Beyond the Brackets – Manish’s Dev Playground" />
+      <meta name="twitter:description" content="Manish Kumar's Dev Playground: Cloud, DevOps, AI, and full-stack engineering insights, projects, and portfolio." />
       <meta name="twitter:image" content="https://manish-devspace.vercel.app/assets/images/profile1.png" />
       <meta name="twitter:site" content="@manishkrch" />
       <link rel="canonical" href="https://manish-devspace.vercel.app/about" />

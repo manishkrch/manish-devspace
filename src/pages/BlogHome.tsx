@@ -71,6 +71,7 @@ const BlogHome: React.FC = () => (
     <Helmet>
       <title>Blog | Manish Kumar</title>
       <meta name="description" content="Read actionable tips and real-world lessons on automation, cloud, and engineering leadership from Manish Kumar." />
+      <meta name="viewport" content="width=device-width, initial-scale=1" />
       <meta name="robots" content="index, follow" />
       <meta name="author" content="Manish Kumar Choudhary" />
       <meta name="copyright" content="© 2025 Manish Kumar Choudhary" />
@@ -82,6 +83,8 @@ const BlogHome: React.FC = () => (
       <meta property="og:url" content="https://manish-devspace.vercel.app/blog" />
       <meta property="og:image" content="https://manish-devspace.vercel.app/assets/images/profile1.png" />
       <meta name="twitter:card" content="summary_large_image" />
+      <meta property="twitter:domain" content="manish-devspace.vercel.app" />
+      <meta property="twitter:url" content="https://manish-devspace.vercel.app/blog" />
       <meta name="twitter:title" content="Blog | Manish Kumar" />
       <meta name="twitter:description" content="Read actionable tips and real-world lessons on automation, cloud, and engineering leadership from Manish Kumar." />
       <meta name="twitter:image" content="https://manish-devspace.vercel.app/assets/images/profile1.png" />

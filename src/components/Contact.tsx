@@ -63,17 +63,20 @@ const Contact: React.FC = () => {
       <Helmet>
         <title>Contact | Manish Kumar</title>
         <meta name="description" content="Contact Manish Kumar for project inquiries, collaborations, or just to say hi. Get in touch via the contact form or email." />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
         <meta name="robots" content="index, follow" />
         <meta name="author" content="Manish Kumar Choudhary" />
         <meta name="copyright" content="© 2025 Manish Kumar Choudhary" />
         <meta name="generator" content="React, Vite, TypeScript" />
         <meta name="ai-content" content="false" />
+        <meta property="og:url" content="https://manish-devspace.vercel.app/contact" />
+        <meta property="og:type" content="website" />
         <meta property="og:title" content="Contact | Manish Kumar" />
         <meta property="og:description" content="Contact Manish Kumar for project inquiries, collaborations, or just to say hi. Get in touch via the contact form or email." />
-        <meta property="og:type" content="website" />
-        <meta property="og:url" content="https://manish-devspace.vercel.app/contact" />
         <meta property="og:image" content="https://manish-devspace.vercel.app/assets/images/profile1.png" />
         <meta name="twitter:card" content="summary_large_image" />
+        <meta property="twitter:domain" content="manish-devspace.vercel.app" />
+        <meta property="twitter:url" content="https://manish-devspace.vercel.app/contact" />
         <meta name="twitter:title" content="Contact | Manish Kumar" />
         <meta name="twitter:description" content="Contact Manish Kumar for project inquiries, collaborations, or just to say hi. Get in touch via the contact form or email." />
         <meta name="twitter:image" content="https://manish-devspace.vercel.app/assets/images/profile1.png" />
