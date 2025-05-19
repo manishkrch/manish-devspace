@@ -5,7 +5,7 @@ import AboutMe from './pages/AboutMe';
 import Resume from './pages/Resume';
 import Navbar from './components/Navbar';
 import Services from './pages/Services';
-import Contact from './pages/Contact';
+import Contact from './components/Contact';
 import Portfolio from './pages/Portfolio';
 import BlogHome from './pages/BlogHome';
 import BlogPostTerraformAzureAutomation from './blogs/blog-post-terraform-azure-automation';
@@ -25,7 +25,7 @@ import ProjectIncidentResponse from './projects/project-incident-response';
 import ProjectInventoryWebApp from './projects/project-inventory-web-app';
 import ProjectLinuxDebugging from './projects/project-linux-debugging';
 import ProjectPortfolioWebsite from './projects/project-portfolio-website';
-import Subscribe from './pages/Subscribe';
+import Subscribe from './components/Subscribe';
 
 const App: React.FC = () => {
   return (

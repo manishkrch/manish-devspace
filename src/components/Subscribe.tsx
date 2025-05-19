@@ -1,5 +1,4 @@
-import React, { useState } from 'react';
-import './Subscribe.css';
+import React, { useState, useEffect } from 'react';
 
 const GOOGLE_SCRIPT_URL = "https://script.google.com/macros/s/AKfycbxv1R0hWQuR-mIrCkXwfQKMJgwMcJ_cxzjDRfm28YSxSe1-1VmhcsIbjk5ZpFC_cxxO2Q/exec"; // Replace with your deployed Apps Script URL
 
@@ -7,6 +6,14 @@ const Subscribe: React.FC = () => {
   const [email, setEmail] = useState('');
   const [status, setStatus] = useState<'idle' | 'loading' | 'success' | 'error'>('idle');
   const [emailError, setEmailError] = useState('');
+
+  // Automatically clear success message after 2 seconds
+  useEffect(() => {
+    if (status === 'success') {
+      const timer = setTimeout(() => setStatus('idle'), 2000);
+      return () => clearTimeout(timer);
+    }
+  }, [status]);
 
   const validateEmail = (value: string) => {
     // Simple email regex for validation
@@ -63,7 +70,15 @@ const Subscribe: React.FC = () => {
               </button>
             </div>
           </div>
-          {/* Removed privacy note as requested */}
+          {status === 'success' && (
+            <div className="form-row mt-3">
+              <div className="col">
+                <div className="alert alert-success mb-0 text-center">
+                  Thank you for subscribing! You’ve been added to the list and will receive updates soon.
+                </div>
+              </div>
+            </div>
+          )}
         </form>
       </div>
     </section>

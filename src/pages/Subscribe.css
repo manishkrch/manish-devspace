@@ -1,6 +1,0 @@
-/* Remove all custom styles, revert to empty or original minimal state */
-
-/* Only keep minimal spacing if needed, no messages */
-.success-msg, .error-msg {
-  display: none;
-}

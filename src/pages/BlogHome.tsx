@@ -1,6 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import Subscribe from './Subscribe';
+import Subscribe from '../components/Subscribe';
 
 const blogPosts = [
   {
