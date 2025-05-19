@@ -81,13 +81,13 @@ const BlogHome: React.FC = () => (
       <meta property="og:description" content="Read actionable tips and real-world lessons on automation, cloud, and engineering leadership from Manish Kumar." />
       <meta property="og:type" content="website" />
       <meta property="og:url" content="https://manish-devspace.vercel.app/blog" />
-      <meta property="og:image" content="https://manish-devspace.vercel.app/assets/images/profile1.png" />
+      <meta property="og:image" content="https://manish-devspace.vercel.app/assets/images/og-image.png" />
       <meta name="twitter:card" content="summary_large_image" />
       <meta property="twitter:domain" content="manish-devspace.vercel.app" />
       <meta property="twitter:url" content="https://manish-devspace.vercel.app/blog" />
       <meta name="twitter:title" content="Blog | Manish Kumar" />
       <meta name="twitter:description" content="Read actionable tips and real-world lessons on automation, cloud, and engineering leadership from Manish Kumar." />
-      <meta name="twitter:image" content="https://manish-devspace.vercel.app/assets/images/profile1.png" />
+      <meta name="twitter:image" content="https://manish-devspace.vercel.app/assets/images/og-image.png" />
       <meta name="twitter:site" content="@manishkrch" />
       <link rel="canonical" href="https://manish-devspace.vercel.app/blog" />
     </Helmet>

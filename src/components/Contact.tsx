@@ -73,13 +73,13 @@ const Contact: React.FC = () => {
         <meta property="og:type" content="website" />
         <meta property="og:title" content="Contact | Manish Kumar" />
         <meta property="og:description" content="Contact Manish Kumar for project inquiries, collaborations, or just to say hi. Get in touch via the contact form or email." />
-        <meta property="og:image" content="https://manish-devspace.vercel.app/assets/images/profile1.png" />
+        <meta property="og:image" content="https://manish-devspace.vercel.app/assets/images/og-image.png" />
         <meta name="twitter:card" content="summary_large_image" />
         <meta property="twitter:domain" content="manish-devspace.vercel.app" />
         <meta property="twitter:url" content="https://manish-devspace.vercel.app/contact" />
         <meta name="twitter:title" content="Contact | Manish Kumar" />
         <meta name="twitter:description" content="Contact Manish Kumar for project inquiries, collaborations, or just to say hi. Get in touch via the contact form or email." />
-        <meta name="twitter:image" content="https://manish-devspace.vercel.app/assets/images/profile1.png" />
+        <meta name="twitter:image" content="https://manish-devspace.vercel.app/assets/images/og-image.png" />
         <meta name="twitter:site" content="@manishkrch" />
         <link rel="canonical" href="https://manish-devspace.vercel.app/contact" />
       </Helmet>

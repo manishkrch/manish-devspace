@@ -18,13 +18,13 @@ const AboutMe: React.FC = () => {
       <meta property="og:type" content="website" />
       <meta property="og:title" content="Beyond the Brackets – Manish’s Dev Playground" />
       <meta property="og:description" content="Manish Kumar's Dev Playground: Cloud, DevOps, AI, and full-stack engineering insights, projects, and portfolio." />
-      <meta property="og:image" content="https://manish-devspace.vercel.app/assets/images/profile1.png" />
+      <meta property="og:image" content="https://manish-devspace.vercel.app/assets/images/og-image.png" />
       <meta name="twitter:card" content="summary_large_image" />
       <meta property="twitter:domain" content="manish-devspace.vercel.app" />
       <meta property="twitter:url" content="https://manish-devspace.vercel.app/about" />
       <meta name="twitter:title" content="Beyond the Brackets – Manish’s Dev Playground" />
       <meta name="twitter:description" content="Manish Kumar's Dev Playground: Cloud, DevOps, AI, and full-stack engineering insights, projects, and portfolio." />
-      <meta name="twitter:image" content="https://manish-devspace.vercel.app/assets/images/profile1.png" />
+      <meta name="twitter:image" content="https://manish-devspace.vercel.app/assets/images/og-image.png" />
       <meta name="twitter:site" content="@manishkrch" />
       <link rel="canonical" href="https://manish-devspace.vercel.app/about" />
     </Helmet>

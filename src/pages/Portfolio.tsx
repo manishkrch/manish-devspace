@@ -138,13 +138,13 @@ const Portfolio: React.FC = () => {
         <meta property="og:description" content="Explore Manish Kumar's portfolio of web, cloud, and AI projects for top clients and enterprises." />
         <meta property="og:type" content="website" />
         <meta property="og:url" content="https://manish-devspace.vercel.app/portfolio" />
-        <meta property="og:image" content="https://manish-devspace.vercel.app/assets/images/profile1.png" />
+        <meta property="og:image" content="https://manish-devspace.vercel.app/assets/images/og-image.png" />
         <meta name="twitter:card" content="summary_large_image" />
         <meta property="twitter:domain" content="manish-devspace.vercel.app" />
         <meta property="twitter:url" content="https://manish-devspace.vercel.app/portfolio" />
         <meta name="twitter:title" content="Portfolio | Manish Kumar" />
         <meta name="twitter:description" content="Explore Manish Kumar's portfolio of web, cloud, and AI projects for top clients and enterprises." />
-        <meta name="twitter:image" content="https://manish-devspace.vercel.app/assets/images/profile1.png" />
+        <meta name="twitter:image" content="https://manish-devspace.vercel.app/assets/images/og-image.png" />
         <meta name="twitter:site" content="@manishkrch" />
         <link rel="canonical" href="https://manish-devspace.vercel.app/portfolio" />
       </Helmet>
