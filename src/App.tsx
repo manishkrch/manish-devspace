@@ -87,6 +87,7 @@ const App: React.FC = () => {
         <div className="main-wrapper">
           <Suspense fallback={<div className="container text-center py-5"><div className="spinner-border" role="status" aria-label="Loading..." /></div>}>
             <Routes>
+              <Route path="/" element={<AboutMe />} />
               <Route path="/about" element={<AboutMe />} />
               <Route path="/portfolio" element={<Portfolio />} />
               <Route path="/services" element={<Services />} />
