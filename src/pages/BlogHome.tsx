@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 import Subscribe from '../components/Subscribe';
 import { Helmet } from 'react-helmet-async';
 
-const blogPosts = [
+export const blogPosts = [
   {
     id: 1,
     title: 'Automating Cloud Infrastructure with Terraform & Azure',

@@ -103,7 +103,7 @@ const Services: React.FC = () => {
       <section className="pricing-section py-5">
         <div className="container single-col-max-width">
           <h3 className="text-center mb-4">Service Packages</h3>
-          <div className="table-responsive">
+          {/* <div className="table-responsive"> */}
             <table id="pricing-table" className="pricing-table table-bordered">
               <thead>
                 <tr className="border-0">
@@ -155,7 +155,7 @@ const Services: React.FC = () => {
               </tfoot>
             </table>
           </div>
-        </div>
+        {/* </div> */}
       </section>
       <section className="faq-section">
         <div className="container single-col-max-width">
@@ -196,6 +196,7 @@ const Services: React.FC = () => {
           </div>
         </div>
       </section>
+      <hr/>
     </>
   );
 };

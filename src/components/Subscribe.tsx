@@ -20,6 +20,11 @@ const Subscribe: React.FC = () => {
     return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(value);
   };
 
+  // Sanitize user input for security (example for Subscribe form)
+  function sanitizeInput(input: string) {
+    return input.replace(/[<>"'`]/g, '');
+  }
+
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     setEmailError('');
@@ -58,7 +63,7 @@ const Subscribe: React.FC = () => {
                 name="email"
                 placeholder="Enter your email"
                 value={email}
-                onChange={e => setEmail(e.target.value)}
+                onChange={e => setEmail(sanitizeInput(e.target.value))}
                 required
                 aria-required="true"
               />

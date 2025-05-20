@@ -1,6 +1,6 @@
 <!doctype html>
 <html lang="en">
-  head>
+  <head>
 	<title>Beyond the Brackets – Manish’s Dev Playground</title>
 	
 	<!-- Meta -->
@@ -23,8 +23,13 @@
 	<!-- Theme CSS -->  
 	<link id="theme-style" rel="stylesheet" href="assets/css/theme-1.css">
 
+	<!-- Preload main og-image and Roboto font for performance -->
+	<link rel="preload" as="image" href="assets/images/og-image.png" imagesrcset="assets/images/og-image.png 1x" type="image/png" />
+	<link rel="preload" as="style" href="assets/css/theme-1.css" />
+	<link rel="preload" as="font" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700" crossorigin />
+
 </head> 
-  <body>
+  <body >
     <div id="root"></div>
 	
 	<div id="config-panel" class="config-panel d-none d-lg-block">

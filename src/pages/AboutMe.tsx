@@ -1,8 +1,93 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { Helmet } from 'react-helmet-async';
+import  { projects } from './Portfolio';
+import { blogPosts } from './BlogHome';
+
+// LinkedIn Recommendations (replace with your real data)
+// const testimonialImages = blogPosts.slice(0, 4).map(post => post.image);
+const testimonials = [
+  {
+    quote: `Manish is a skilled engineer who brings a positive attitude and delivers quality results. He adapts quickly and always supports his team, making a real impact on every project he joins.`,
+    name: 'Stephen Fletcher',
+    info: 'Director of Engineering at Avalara',
+    image: 'https://cdn.jsdelivr.net/gh/twitter/twemoji@14.0.2/assets/72x72/1f468-1f3fd-200d-1f4bb.png', // 👨🏽‍💻
+  },
+  {
+    quote: `Working with Manish was a great experience. His technical skills and thoughtful approach helped our team succeed. He is reliable, collaborative, and always delivers on time.`,
+    name: 'Cariad Eccleston',
+    info: 'Senior Software Engineer @ digiLab',
+    image: 'https://cdn.jsdelivr.net/gh/twitter/twemoji@14.0.2/assets/72x72/1f469-1f3fb-200d-1f4bb.png', // 👩🏻‍💻
+  },
+  {
+    quote: `Manish is a pioneer in CloudOps and always finds effective ways to solve complex problems. He brings deep expertise and a positive attitude to every challenge.`,
+    name: 'Bhavin Trikamji',
+    info: 'Head of Engineering - Virtual Queueing',
+    image: 'https://cdn.jsdelivr.net/gh/twitter/twemoji@14.0.2/assets/72x72/1f468-1f3fe-200d-1f4bb.png', // 👨🏾‍💻
+  },
+  {
+    quote: `Manish played a key role in our migration projects and is a dependable technical expert. He is proactive, detail-oriented, and always ready to help the team succeed.`,
+    name: 'Ram Arun',
+    info: 'Director - Cloud Operations and Product Reliability',
+    image: 'https://cdn.jsdelivr.net/gh/twitter/twemoji@14.0.2/assets/72x72/1f468-1f3fb-200d-1f4bb.png', // 👨🏻‍💻
+  },
+  {
+    quote: `Manish is a supportive and collaborative colleague. His positive attitude and skills make him a standout team member who always delivers high-quality results.`,
+    name: 'Anatolii Horoshko',
+    info: 'Lead Systems Engineer / SRE | DevOps @ EPAM Systems',
+    image: 'https://cdn.jsdelivr.net/gh/twitter/twemoji@14.0.2/assets/72x72/1f468-1f3fc-200d-1f4bb.png', // 👨🏼‍💻
+  },
+];
 
 const AboutMe: React.FC = () => {
+  React.useEffect(() => {
+    // Prevent multiple initializations
+    let sliderInstance: any = null;
+    if (typeof window !== 'undefined' && (window as any).tns) {
+      // Remove any navs inside or after the carousel
+      const navs = document.querySelectorAll('.testimonial-carousel ~ .tns-nav, #testimonial-slider-nav .tns-nav');
+      navs.forEach(nav => nav.remove());
+      sliderInstance = (window as any).tns({
+        container: '.testimonial-carousel',
+        items: 1,
+        slideBy: 'page',
+        autoplay: true,
+        autoplayButtonOutput: false,
+        controls: false,
+        nav: true,
+        mouseDrag: true,
+        gutter: 24,
+        speed: 900,
+        autoplayTimeout: 6000,
+        responsive: {
+          768: { items: 2 },
+          992: { items: 3 }
+        }
+      });
+      // Move nav dots below the slider, always after the carousel and before the nav buttons
+      setTimeout(() => {
+        // Try both selectors for nav dots (immediate sibling and any following sibling)
+        let nav = document.querySelector('.testimonial-carousel + .tns-nav') || document.querySelector('.testimonial-carousel ~ .tns-nav');
+        const navTarget = document.getElementById('testimonial-slider-nav');
+        if (nav && navTarget) {
+          navTarget.innerHTML = '';
+          navTarget.appendChild(nav);
+          if (nav instanceof HTMLElement) {
+            nav.style.marginTop = '0';
+          }
+        }
+      }, 600);
+    }
+    // Cleanup on unmount
+    return () => {
+      if (sliderInstance && sliderInstance.destroy) {
+        sliderInstance.destroy();
+      }
+      const navs = document.querySelectorAll('.testimonial-carousel ~ .tns-nav, #testimonial-slider-nav .tns-nav');
+      navs.forEach(nav => nav.remove());
+    };
+  }, []);
+
   return (
 	<>
 	  <Helmet>
@@ -44,7 +129,13 @@ const AboutMe: React.FC = () => {
 							<Link className="btn btn-secondary mb-3" to="/resume"><i className="fas fa-file-alt mr-2"></i><span className="d-none d-md-inline">View</span> Resume</Link>
 						</div>
 					</div>
-					<img className="profile-image mb-3 mb-lg-0 ml-lg-5 mr-md-0" src="assets/images/profile-lg-o.JPG" alt="Manish Kumar Choudhary" />
+					 <img
+        className="profile-image mb-3 mb-lg-0 ml-lg-5 mr-md-0"
+        src="assets/images/profile-lg-o.JPG"
+        alt="Portrait of Manish Kumar Choudhary, Senior Software Engineer"
+        width="240"
+        height="240"
+      />
 				</div>
 			</div>
 		</section>
@@ -58,7 +149,16 @@ const AboutMe: React.FC = () => {
 				<div className="row">
 					<div className="item col-6 col-lg-3">
 						<div className="item-inner">
-							<div className="item-icon mb-2"><img src="/assets/images/project/project-1.jpg" alt="Cloud & DevOps" style={{width: '40px', borderRadius: '8px'}} /> <i className="fab fa-cloud ml-2"></i></div>
+							<div className="item-icon mb-2">
+        <img
+          src="/assets/images/project/project-1.jpg"
+          alt="Cloud & DevOps project thumbnail"
+          style={{ width: '40px', borderRadius: '8px' }}
+          width="40"
+          height="40"
+        />
+        <i className="fab fa-cloud ml-2" aria-hidden="true"></i>
+      </div>
 							<h3 className="item-title">Cloud & DevOps Automation</h3>
 							<div className="item-desc">Automating cloud infrastructure with <strong>AWS</strong>, <strong>Azure</strong>, <strong>Terraform</strong>, and <strong>CloudFormation</strong>. Building CI/CD pipelines, monitoring, and incident response for reliable, scalable systems.</div>
 						</div>
@@ -123,6 +223,136 @@ const AboutMe: React.FC = () => {
 				
 			</div>
 		</section>
+	  <div className="container"><hr /></div>
+
+	  {/* Testimonials Section */}
+	  <section className="testimonials-section p-3 p-lg-5">
+		<div className="container">
+		  <h2 className="section-title font-weight-bold mb-5">Testimonials</h2>
+		  <div className="testiomonial-carousel-container">
+			<div className="testimonial-carousel tiny-slider">
+			  {testimonials.map((t, idx) => (
+				<div className="item" key={idx}>
+				  <div className="item-inner w-100 d-flex flex-column justify-content-between">
+					<div className="quote-holder">
+					  <blockquote className="quote-content">
+						{t.quote}
+					  </blockquote>
+					  <i className="fas fa-quote-left"></i>
+					</div>{/*//quote-holder*/}
+					<div className="source-holder mt-3 d-flex align-items-center">
+					  <div className="source-profile mr-3">
+						<img src={t.image} alt={t.name} />
+					  </div>
+					  <div className="meta">
+						<div className="name font-weight-bold">{t.name}</div>
+						<div className="info text-muted">{t.info}</div>
+					  </div>
+					</div>
+				  </div>{/*//item-inner*/}
+				</div>
+			  ))}
+			</div>
+			 {/* Nav dots container, always below the carousel */}
+			<div id="testimonial-slider-nav" className="w-100 d-flex justify-content-center mt-3"></div>
+		  </div>
+		  {/* Only one row of navigation buttons below nav dots */}
+		</div>
+	  </section>
+	  <div className="container"><hr /></div>
+
+	  {/* Featured Projects Section */}
+	  <section className="featured-section p-3 p-lg-5">
+		<div className="container">
+		  <h2 className="section-title font-weight-bold mb-5">Featured Projects</h2>
+		  <div className="row">
+			{projects.slice(0, 4).map((project: any, idx: number) => (
+			  <div className="col-md-6 mb-5" key={idx}>
+				<div className="card project-card h-100">
+				  <div className="row no-gutters">
+					<div className="col-lg-4 card-img-holder">
+					  <img src={project.image} className="card-img" alt={project.title} />
+					</div>
+					<div className="col-lg-8">
+					  <div className="card-body">
+						<h5 className="card-title">
+						  <Link to={project.link} className="theme-link">{project.title}</Link>
+						</h5>
+						<p className="card-text">{project.description}</p>
+						<p className="card-text"><small className="text-muted">Client: {project.client}</small></p>
+					  </div>
+					</div>
+				  </div>
+				  <div className="link-mask">
+					<Link className="link-mask-link" to={project.link}></Link>
+					<div className="link-mask-text">
+					  <Link className="btn btn-secondary" to={project.link}>
+						<i className="fas fa-eye mr-2"></i>View Case Study
+					  </Link>
+					</div>
+				  </div>
+				</div>
+			  </div>
+			))}
+		  </div>
+		  <div className="text-center py-3">
+			<Link to="/portfolio" className="btn btn-primary">
+			  <i className="fas fa-arrow-alt-circle-right mr-2"></i>View Portfolio
+			</Link>
+		  </div>
+		</div>
+	  </section>
+	  <div className="container"><hr /></div>
+
+	  {/* Latest Blog Posts Section */}
+	  <section className="latest-blog-section p-3 p-lg-5">
+		<div className="container">
+		  <h2 className="section-title font-weight-bold mb-5">Latest Blog Posts</h2>
+		  <div className="row">
+			{blogPosts.slice(0, 3).map((post: any, idx: number) => {
+			  // Use relevant images for each blog post
+			  let image = post.image;
+			  if (post.title.toLowerCase().includes('ai')) {
+				image = 'https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=600&q=80'; // AI/automation
+			  } else if (post.title.toLowerCase().includes('cloud')) {
+				image = 'https://images.unsplash.com/photo-1465101046530-73398c7f28ca?auto=format&fit=crop&w=600&q=80'; // Cloud
+			  } else if (post.title.toLowerCase().includes('linux')) {
+				image = 'https://images.unsplash.com/photo-1519389950473-47ba0277781c?auto=format&fit=crop&w=600&q=80'; // Linux/engineering
+			  } else if (post.title.toLowerCase().includes('react')) {
+				image = 'https://images.unsplash.com/photo-1519125323398-675f0ddb6308?auto=format&fit=crop&w=600&q=80'; // React/JS
+			  } else if (post.title.toLowerCase().includes('career')) {
+				image = 'https://images.unsplash.com/photo-1465101178521-c1a9136a3b99?auto=format&fit=crop&w=600&q=80'; // Career/growth
+			  } else if (post.title.toLowerCase().includes('terraform')) {
+				image = 'https://images.unsplash.com/photo-1504384308090-c894fdcc538d?auto=format&fit=crop&w=600&q=80'; // Terraform/cloud infra
+			  }
+			  return (
+				<div className="col-md-4 mb-5" key={idx}>
+				  <div className="card blog-post-card h-100">
+					<img className="card-img-top" src={image} alt={post.title} />
+					<div className="card-body">
+					  <h5 className="card-title">
+						<Link className="theme-link" to={post.link}>{post.title}</Link>
+					  </h5>
+					  <p className="card-text">{post.intro}</p>
+					  <p className="mb-0">
+						<Link className="more-link" to={post.link}>Read more &rarr;</Link>
+					  </p>
+					</div>
+					<div className="card-footer">
+					  <small className="text-muted">{post.date} &middot; {post.time}</small>
+					</div>
+				  </div>
+				</div>
+			  );
+			})}
+		  </div>
+		  <div className="text-center py-3">
+			<Link to="/blog" className="btn btn-primary">
+			  <i className="fas fa-arrow-alt-circle-right mr-2"></i>View Blog
+			</Link>
+		  </div>
+		</div>
+	  </section>
 	  <div className="container"><hr /></div>
 	</>
   );

@@ -1,54 +1,66 @@
-# React + TypeScript + Vite
+# Manish DevSpace
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A modern, production-ready portfolio and blog site built with React, TypeScript, and Vite.
 
-Currently, two official plugins are available:
+## Features
+- SEO optimized with Open Graph, Twitter, and canonical meta tags
+- Responsive, mobile-friendly design
+- Contact and Subscribe forms (Google Apps Script backend)
+- Blog, portfolio, and project pages
+- Modern UI with Bootstrap and custom themes
+- Linting and type checking for code quality
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## Getting Started
 
-## Expanding the ESLint configuration
+### Prerequisites
+- Node.js (v18+ recommended)
+- npm (v9+ recommended)
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
-
-```js
-export default tseslint.config({
-  extends: [
-    // Remove ...tseslint.configs.recommended and replace with this
-    ...tseslint.configs.recommendedTypeChecked,
-    // Alternatively, use this for stricter rules
-    ...tseslint.configs.strictTypeChecked,
-    // Optionally, add this for stylistic rules
-    ...tseslint.configs.stylisticTypeChecked,
-  ],
-  languageOptions: {
-    // other options...
-    parserOptions: {
-      project: ['./tsconfig.node.json', './tsconfig.app.json'],
-      tsconfigRootDir: import.meta.dirname,
-    },
-  },
-})
+### Installation
+```sh
+npm install
 ```
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
-
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
-
-export default tseslint.config({
-  plugins: {
-    // Add the react-x and react-dom plugins
-    'react-x': reactX,
-    'react-dom': reactDom,
-  },
-  rules: {
-    // other rules...
-    // Enable its recommended typescript rules
-    ...reactX.configs['recommended-typescript'].rules,
-    ...reactDom.configs.recommended.rules,
-  },
-})
+### Development
+```sh
+npm run dev
 ```
+
+### Production Build
+```sh
+npm run build
+```
+
+### Linting & Type Checking
+```sh
+npm run lint
+```
+
+## Deployment
+- Deploys easily to Vercel, Netlify, or any static host.
+- For Vercel: just connect your repo and deploy.
+
+## Project Structure
+- `src/pages/` – Main site pages (About, Blog, Contact, etc.)
+- `src/components/` – Reusable UI components (Navbar, Contact, Subscribe)
+- `src/blogs/` – Blog post pages
+- `src/projects/` – Project detail pages
+- `public/assets/images/` – Images (use `og-image.png` for social previews)
+
+## SEO & Social
+- All main pages include SEO meta tags and social preview images.
+- Update `og:image` and meta tags in each page for best results.
+
+## Customization
+- Edit theme CSS in `public/assets/css/`
+- Add or update content in `src/pages/`, `src/blogs/`, and `src/projects/`
+
+## Contributing
+Pull requests are welcome! For major changes, please open an issue first to discuss what you would like to change.
+
+## License
+[MIT](LICENSE)
+
+---
+
+_Last updated: May 20, 2025_

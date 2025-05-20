@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { Helmet } from 'react-helmet-async';
 
-const projects = [
+export const projects = [
   {
     title: 'AI-Powered Automation Platform',
     description:
@@ -103,16 +103,6 @@ const projects = [
   },
 ];
 
-const categories = [
-  { label: 'All', filter: '*' },
-  { label: 'Web App', filter: 'webapp' },
-  { label: 'Mobile App', filter: 'mobileapp' },
-  { label: 'DevOps Automation', filter: 'devops' },
-  { label: 'Frontend', filter: 'frontend' },
-  { label: 'Backend', filter: 'backend' },
-  { label: 'Linux', filter: 'linux' },
-];
-
 const Portfolio: React.FC = () => {
   const [activeCategory, setActiveCategory] = useState<string>('all');
 
@@ -124,7 +114,7 @@ const Portfolio: React.FC = () => {
         );
 
   return (
-    <div className="main-wrapper">
+    <>
       <Helmet>
         <title>Portfolio | Manish Kumar</title>
         <meta name="description" content="Explore Manish Kumar's portfolio of web, cloud, and AI projects for top clients and enterprises." />
@@ -152,76 +142,70 @@ const Portfolio: React.FC = () => {
         <div className="container text-center single-col-max-width">
           <h2 className="heading">Portfolio</h2>
           <div className="intro">
-            <p>
-              Welcome to my online portfolio. I specialize in building scalable, cloud-native, and AI-powered solutions for global clients. Explore some of my featured projects below. Interested in working together? <a href="/contact">Contact me</a>!
-            </p>
+            <p>Welcome to my online portfolio. Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. I'm taking on freelance work at the moment. Want some help building your software?</p>
           </div>
-          <a className="btn btn-primary" href="/contact">
-            <i className="fas fa-paper-plane mr-2"></i>Hire Me
-          </a>
+          <a className="btn btn-primary" href="/contact" target="_blank"><i className="fas fa-paper-plane mr-2"></i>Hire Me</a>
         </div>
       </section>
       <section className="projects-list px-3 py-5 p-md-5">
         <div className="container">
           <div className="text-center">
             <ul id="filters" className="filters mb-5 mx-auto pl-0">
-              {categories.map((cat) => (
-                <li
-                  key={cat.filter}
-                  className={`type mb-3 mb-lg-0${activeCategory === cat.filter ? ' active' : ''}`}
-                  style={{ cursor: 'pointer' }}
-                  onClick={() => setActiveCategory(cat.filter)}
-                >
-                  {cat.label}
-                </li>
-              ))}
+              <li className={`type mb-3 mb-lg-0${activeCategory === '*' ? ' active' : ''}`} data-filter="*" style={{ cursor: 'pointer' }} onClick={() => setActiveCategory('*')}>All</li>
+              <li className={`type mb-3 mb-lg-0${activeCategory === 'webapp' ? ' active' : ''}`} data-filter=".webapp" style={{ cursor: 'pointer' }} onClick={() => setActiveCategory('webapp')}>Web App</li>
+              <li className={`type mb-3 mb-lg-0${activeCategory === 'mobileapp' ? ' active' : ''}`} data-filter=".mobileapp" style={{ cursor: 'pointer' }} onClick={() => setActiveCategory('mobileapp')}>Mobile App</li>
+              <li className={`type mb-3 mb-lg-0${activeCategory === 'frontend' ? ' active' : ''}`} data-filter=".frontend" style={{ cursor: 'pointer' }} onClick={() => setActiveCategory('frontend')}>Frontend</li>
+              <li className={`type mb-3 mb-lg-0${activeCategory === 'backend' ? ' active' : ''}`} data-filter=".backend" style={{ cursor: 'pointer' }} onClick={() => setActiveCategory('backend')}>Backend</li>
+              <li className={`type mb-3 mb-lg-0${activeCategory === 'devops' ? ' active' : ''}`} data-filter=".devops" style={{ cursor: 'pointer' }} onClick={() => setActiveCategory('devops')}>DevOps Automation</li>
+              <li className={`type mb-3 mb-lg-0${activeCategory === 'linux' ? ' active' : ''}`} data-filter=".linux" style={{ cursor: 'pointer' }} onClick={() => setActiveCategory('linux')}>Linux</li>
             </ul>
           </div>
           <div className="project-cards row isotope">
-            {filteredProjects.length === 0 ? (
-              <div className="col-12 text-center text-muted">No projects found in this category.</div>
-            ) : (
-              filteredProjects.map((project, idx) => (
-                <div
-                  key={idx}
-                  className={`isotope-item col-md-6 mb-5 ${project.categories.join(' ')}`}
-                >
-                  <div className="card project-card">
-                    <div className="row no-gutters">
-                      <div className="col-lg-4 card-img-holder">
-                        <img src={project.image} className="card-img" alt={project.title} />
-                      </div>
-                      <div className="col-lg-8">
-                        <div className="card-body">
-                          <h5 className="card-title">
-                            <a href={project.link} className="theme-link">
-                              {project.title}
-                            </a>
-                          </h5>
-                          <p className="card-text">{project.description}</p>
-                          <p className="card-text">
-                            <small className="text-muted">Client: {project.client}</small>
-                          </p>
-                        </div>
-                      </div>
+            {filteredProjects.map((project) => (
+              <div
+                key={project.title}
+                className={`isotope-item col-md-6 mb-5 ${project.categories.join(' ')}`}
+              >
+                <div className="card project-card">
+                  <div className="row no-gutters">
+                    <div className="col-lg-4 card-img-holder">
+                      <img
+                        src={project.image}
+                        className="card-img"
+                        alt="image"
+                        width="400"
+                        height="225"
+                        loading="lazy"
+                      />
                     </div>
-                    <div className="link-mask">
-                      <a className="link-mask-link" href={project.link}></a>
-                      <div className="link-mask-text">
-                        <a className="btn btn-secondary" href={project.link}>
-                          <i className="fas fa-eye mr-2"></i>View Case Study
-                        </a>
+                    <div className="col-lg-8">
+                      <div className="card-body">
+                        <h5 className="card-title">
+                          <a href={project.link} className="theme-link">Project Heading</a>
+                        </h5>
+                        <p className="card-text">{project.description}</p>
+                        <p className="card-text">
+                          <small className="text-muted">Client: {project.client}</small>
+                        </p>
                       </div>
                     </div>
                   </div>
+                  <div className="link-mask">
+                    <a className="link-mask-link" href={project.link}></a>
+                    <div className="link-mask-text">
+                      <a className="btn btn-secondary" href={project.link}>
+                        <i className="fas fa-eye mr-2"></i>View Case Study
+                      </a>
+                    </div>
+                  </div>
                 </div>
-              ))
-            )}
+              </div>
+            ))}
           </div>
         </div>
       </section>
       <hr />
-    </div>
+    </>
   );
 };
 

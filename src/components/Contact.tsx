@@ -4,8 +4,24 @@ import { Helmet } from 'react-helmet-async';
 // Replace with your actual deployed Google Apps Script Web App URL
 const GOOGLE_SCRIPT_URL = "https://script.google.com/macros/s/AKfycbx8AMVGuIBzZ7Qrh34fjjP-bsAexuW3HBIwlwr-pqbZ6hMU_EU47Ykwy-fpj4JeUtXh/exec";
 
+/**
+ * Sanitizes user input to prevent XSS attacks.
+ * @param input - The user input string
+ * @returns The sanitized string
+ */
+function sanitizeInput(input: string): string {
+  return input.replace(/[<>"'`]/g, '');
+}
+
+interface ContactForm {
+  name: string;
+  email: string;
+  services: string;
+  message: string;
+}
+
 const Contact: React.FC = () => {
-  const [form, setForm] = useState({ name: '', email: '', services: '', message: '' });
+  const [form, setForm] = useState<ContactForm>({ name: '', email: '', services: '', message: '' });
   const [status, setStatus] = useState<'idle' | 'loading' | 'success' | 'error'>('idle');
   const [error, setError] = useState('');
 
@@ -18,7 +34,7 @@ const Contact: React.FC = () => {
   }, [status]);
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) => {
-    setForm({ ...form, [e.target.name]: e.target.value });
+    setForm({ ...form, [e.target.name]: sanitizeInput(e.target.value) });
   };
 
   const validate = () => {
@@ -39,7 +55,13 @@ const Contact: React.FC = () => {
     if (!validate()) return;
     setStatus('loading');
     try {
-      const params = new URLSearchParams(form);
+      // Fix: convert form to Record<string, string> for URLSearchParams
+      const params = new URLSearchParams({
+        name: form.name,
+        email: form.email,
+        services: form.services,
+        message: form.message,
+      });
       const res = await fetch(GOOGLE_SCRIPT_URL, {
         method: 'POST',
         body: params,
@@ -61,8 +83,8 @@ const Contact: React.FC = () => {
   return (
     <>
       <Helmet>
-        <title>Contact | Manish Kumar</title>
-        <meta name="description" content="Contact Manish Kumar for project inquiries, collaborations, or just to say hi. Get in touch via the contact form or email." />
+        <title>Contact – Manish Kumar</title>
+        <meta name="description" content="Contact Manish Kumar for cloud, DevOps, and AI consulting. Get in touch for project inquiries, collaborations, or mentorship." />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <meta name="robots" content="index, follow" />
         <meta name="author" content="Manish Kumar Choudhary" />
@@ -101,40 +123,41 @@ const Contact: React.FC = () => {
       </section>
       <section className="contact-section px-3 py-5 p-md-5">
         <div className="container">
-          <form className="contact-form col-lg-8 mx-lg-auto" onSubmit={handleSubmit}>
+          <form className="contact-form col-lg-8 mx-lg-auto" onSubmit={handleSubmit} aria-label="Contact form">
             <h3 className="text-center mb-3">Get In Touch</h3>
             <div className="form-row">
               <div className="form-group col-md-6">
-                <label className="sr-only" htmlFor="cname">Name</label>
-                <input type="text" className="form-control" id="cname" name="name" placeholder="Name" minLength={2} required aria-required="true" value={form.name} onChange={handleChange} />
+                <label htmlFor="name">Name</label>
+                <input type="text" className="form-control" id="name" name="name" placeholder="Name" minLength={2} required aria-required="true" aria-label="Name" autoComplete="name" value={form.name} onChange={handleChange} />
               </div>
               <div className="form-group col-md-6">
-                <label className="sr-only" htmlFor="cemail">Email</label>
-                <input type="email" className="form-control" id="cemail" name="email" placeholder="Email" required aria-required="true" value={form.email} onChange={handleChange} />
+                <label htmlFor="email">Email</label>
+                <input type="email" className="form-control" id="email" name="email" placeholder="Email" required aria-required="true" aria-label="Email" autoComplete="email" value={form.email} onChange={handleChange} />
               </div>
               <div className="form-group col-12">
-                <select id="services" className="custom-select" name="services" value={form.services} onChange={handleChange}>
+                <label htmlFor="services">Service (optional)</label>
+                <select id="services" className="custom-select" name="services" value={form.services} onChange={handleChange} aria-label="Service">
                   <option value="" disabled>Select a service package you're interested in...</option>
-                  <option value="basic">Basic</option>
-                  <option value="standard">Standard</option>
-                  <option value="premium">Premium</option>
-                  <option value="not sure">Not sure</option>
+                  <option value="cloud">Cloud Consulting</option>
+                  <option value="devops">DevOps Automation</option>
+                  <option value="ai">AI/ML Solutions</option>
+                  <option value="other">Other</option>
                 </select>
                 <small className="form-text text-muted pt-1"><i className="fas fa-info-circle mr-2 text-primary"></i>Want to know what's included in each package? Check the <a href="/services" target="_blank">Services & Pricing</a> page.</small>
               </div>
               <div className="form-group col-12">
-                <label className="sr-only" htmlFor="cmessage">Your message</label>
-                <textarea className="form-control" id="cmessage" name="message" placeholder="Enter your message" rows={10} required aria-required="true" value={form.message} onChange={handleChange}></textarea>
+                <label htmlFor="message">Message</label>
+                <textarea className="form-control" id="message" name="message" placeholder="Enter your message" rows={10} required aria-required="true" aria-label="Message" value={form.message} onChange={handleChange}></textarea>
               </div>
               <div className="form-group col-12">
-                <button type="submit" className="btn btn-block btn-primary py-2" disabled={status==='loading'}>
+                <button type="submit" className="btn btn-block btn-primary py-2" disabled={status==='loading'} aria-busy={status === 'loading'}>
                   {status === 'loading' ? 'Sending...' : 'Send Now'}
                 </button>
               </div>
-              {error && <div className="form-group col-12"><div className="alert alert-danger">{error}</div></div>}
+              {error && <div className="form-group col-12"><div className="alert alert-danger" role="alert" aria-live="assertive">{error}</div></div>}
               {status === 'success' && (
                 <div className="form-group col-12">
-                  <div className="alert alert-success">
+                  <div className="alert alert-success" role="status" aria-live="polite">
                     Thank you for reaching out! Your message has been sent successfully. I appreciate your interest and will get back to you as soon as possible.
                   </div>
                 </div>
@@ -143,6 +166,7 @@ const Contact: React.FC = () => {
           </form>
         </div>
       </section>
+      <hr />
     </>
   );
 };
