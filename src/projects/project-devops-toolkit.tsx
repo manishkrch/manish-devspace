@@ -1,5 +1,5 @@
 const ProjectDevOpsToolkit = () => (
-  <div className="main-wrapper">
+  <>
     <section className="cta-section theme-bg-light py-5">
       <div className="container single-col-max-width">
         <h2 className="heading text-center">Case Study: DevOps Automation Toolkit</h2>
@@ -140,7 +140,7 @@ const ProjectDevOpsToolkit = () => (
     <footer className="footer text-center py-4">
       <hr/>
     </footer>
-  </div>
+  </>
 );
 
 export default ProjectDevOpsToolkit;

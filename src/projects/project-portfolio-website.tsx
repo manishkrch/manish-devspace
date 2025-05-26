@@ -1,5 +1,5 @@
 const ProjectPortfolioWebsite = () => (
-  <div className="main-wrapper">
+  <>
     <section className="cta-section theme-bg-light py-5">
       <div className="container single-col-max-width">
         <h2 className="heading text-center">Case Study: This Portfolio Website</h2>
@@ -140,7 +140,7 @@ const ProjectPortfolioWebsite = () => (
     <footer className="footer text-center py-4">
     </footer>
     <hr/>
-  </div>
+  </>
 );
 
 export default ProjectPortfolioWebsite;

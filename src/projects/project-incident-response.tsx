@@ -1,5 +1,5 @@
 const ProjectIncidentResponse = () => (
-  <div className="main-wrapper">
+  <>
     <section className="cta-section theme-bg-light py-5">
       <div className="container single-col-max-width">
         <h2 className="heading text-center">Case Study: Incident Response Automation</h2>
@@ -140,7 +140,7 @@ const ProjectIncidentResponse = () => (
     <footer className="footer text-center py-4">
       <hr/>
     </footer>
-  </div>
+  </>
 );
 
 export default ProjectIncidentResponse;

@@ -1,5 +1,5 @@
 const ProjectInventoryWebApp = () => (
-  <div className="main-wrapper">
+  <>
     <section className="cta-section theme-bg-light py-5">
       <div className="container single-col-max-width">
         <h2 className="heading text-center">Case Study: Inventory Management Web App</h2>
@@ -140,7 +140,7 @@ const ProjectInventoryWebApp = () => (
     <footer className="footer text-center py-4">
     </footer>
     <hr/>
-  </div>
+  </>
 );
 
 export default ProjectInventoryWebApp;

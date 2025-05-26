@@ -1,5 +1,5 @@
 const ProjectAIAutomation = () => (
-  <div className="main-wrapper">
+ <>
     <section className="cta-section theme-bg-light py-5">
       <div className="container single-col-max-width">
         <h2 className="heading text-center">Case Study: AI-Powered Automation Platform</h2>
@@ -140,7 +140,7 @@ const ProjectAIAutomation = () => (
     <footer className="footer text-center py-4">
     </footer>
     <hr/>
-  </div>
+    </>
 );
 
 export default ProjectAIAutomation;
