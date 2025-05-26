@@ -2,6 +2,8 @@
 import React, { Suspense, lazy } from 'react';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import Navbar from './components/Navbar';
+import { parsedBlogPosts } from './data/blogPosts';
+import { getBlogPostRouteAndComponent } from './helpers/blogHelpers';
 
 // Lazy load large/infrequent pages for performance
 const AboutMe = lazy(() => import('./pages/AboutMe'));
@@ -10,12 +12,6 @@ const Services = lazy(() => import('./pages/Services'));
 const Contact = lazy(() => import('./components/Contact'));
 const Portfolio = lazy(() => import('./pages/Portfolio'));
 const BlogHome = lazy(() => import('./pages/BlogHome'));
-const BlogPostTerraformAzureAutomation = lazy(() => import('./blogs/blog-post-terraform-azure-automation'));
-const BlogPostLinuxDebugging = lazy(() => import('./blogs/blog-post-linux-debugging'));
-const BlogPostAIAutomationPlatforms = lazy(() => import('./blogs/blog-post-ai-automation-platforms'));
-const BlogPostReactTypescriptBestPractices = lazy(() => import('./blogs/blog-post-react-typescript-best-practices'));
-const BlogPostCloudMigrationLessons = lazy(() => import('./blogs/blog-post-cloud-migration-lessons'));
-const BlogPostCareerGrowthTech = lazy(() => import('./blogs/blog-post-career-growth-tech'));
 const ProjectAIAutomation = lazy(() => import('./projects/project-ai-automation'));
 const ProjectCloudInfraAutomation = lazy(() => import('./projects/project-cloud-infra-automation'));
 const ProjectCloudMigration = lazy(() => import('./projects/project-cloud-migration'));
@@ -28,6 +24,16 @@ const ProjectInventoryWebApp = lazy(() => import('./projects/project-inventory-w
 const ProjectLinuxDebugging = lazy(() => import('./projects/project-linux-debugging'));
 const ProjectPortfolioWebsite = lazy(() => import('./projects/project-portfolio-website'));
 const Subscribe = lazy(() => import('./components/Subscribe'));
+
+// Dynamically lazy-load all blog post components based on blogPosts.yml
+const blogPostComponents: Record<string, React.LazyExoticComponent<React.FC>> = {};
+parsedBlogPosts.forEach(post => {
+  const { componentName } = getBlogPostRouteAndComponent(post);
+  if (!blogPostComponents[componentName]) {
+    // Vite requires a static file extension for dynamic imports
+    blogPostComponents[componentName] = lazy(() => import(`./blogs/blog-post-${post.slug}.tsx`));
+  }
+});
 
 // ErrorBoundary component for user-friendly error handling
 import type { ReactNode, ErrorInfo } from 'react';
@@ -97,12 +103,15 @@ const App: React.FC = () => {
               <Route path="/project" element={<div>Project Page</div>} />
               <Route path="/blog-home" element={<BlogHome />} />
               <Route path="/blog-post" element={<div>Blog Post</div>} />
-              <Route path="/blog-post-terraform-azure-automation" element={<BlogPostTerraformAzureAutomation />} />
-              <Route path="/blog-post-linux-debugging" element={<BlogPostLinuxDebugging />} />
-              <Route path="/blog-post-ai-automation-platforms" element={<BlogPostAIAutomationPlatforms />} />
-              <Route path="/blog-post-react-typescript-best-practices" element={<BlogPostReactTypescriptBestPractices />} />
-              <Route path="/blog-post-cloud-migration-lessons" element={<BlogPostCloudMigrationLessons />} />
-              <Route path="/blog-post-career-growth-tech" element={<BlogPostCareerGrowthTech />} />
+              {/* Dynamically add blog post routes */}
+              {parsedBlogPosts.map(post => {
+                const { route, componentName } = getBlogPostRouteAndComponent(post);
+                const Component = blogPostComponents[componentName];
+                return (
+                  <Route key={route} path={route} element={<Component />} />
+                );
+              })}
+              {/* Project routes */}
               <Route path="/project-ai-automation" element={<ProjectAIAutomation />} />
               <Route path="/project-cloud-infra-automation" element={<ProjectCloudInfraAutomation />} />
               <Route path="/project-cloud-migration" element={<ProjectCloudMigration />} />

@@ -1,0 +1,50 @@
+# blogPosts.yml
+# Example blog post data for the React app
+- id: 1
+  title: "AI Automation Platforms: A 2025 Guide"
+  slug: "ai-automation-platforms"
+  date: "2025-05-01"
+  excerpt: "Explore the top AI automation platforms for 2025, their features, and how to choose the right one for your business."
+  image: "/assets/images/blog/blog-post-thumb-3.jpg"
+  featured: true
+  page: 1
+- id: 2
+  title: "Career Growth in Tech: Strategies for Success"
+  slug: "career-growth-tech"
+  date: "2025-04-15"
+  excerpt: "Tips and strategies for advancing your tech career in a rapidly changing industry."
+  image: "/assets/images/blog/blog-post-thumb-6.jpg"
+  featured: false
+  page: 1
+- id: 3
+  title: "Cloud Migration: Lessons Learned"
+  slug: "cloud-migration-lessons"
+  date: "2025-03-28"
+  excerpt: "Key lessons and best practices from real-world cloud migration projects."
+  image: "/assets/images/blog/blog-post-thumb-5.jpg"
+  featured: false
+  page: 1
+- id: 4
+  title: "Linux Debugging: Tools and Techniques"
+  slug: "linux-debugging"
+  date: "2025-03-10"
+  excerpt: "A practical guide to debugging Linux systems using modern tools."
+  image: "/assets/images/blog/blog-post-thumb-2.jpg"
+  featured: false
+  page: 1
+- id: 5
+  title: "React & TypeScript: Best Practices"
+  slug: "react-typescript-best-practices"
+  date: "2025-02-20"
+  excerpt: "How to write robust, maintainable React apps with TypeScript."
+  image: "/assets/images/blog/blog-post-thumb-4.jpg"
+  featured: true
+  page: 1
+- id: 6
+  title: "Terraform & Azure: Automating Cloud Infrastructure"
+  slug: "terraform-azure-automation"
+  date: "2025-01-30"
+  excerpt: "Automate your Azure infrastructure with Terraform: a step-by-step guide."
+  image: "/assets/images/blog/blog-post-thumb-1.jpg"
+  featured: false
+  page: 2

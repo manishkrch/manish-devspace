@@ -2,7 +2,10 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import { Helmet } from 'react-helmet-async';
 import  { projects } from './Portfolio';
-import { blogPosts } from './BlogHome';
+import { parsedBlogPosts, mapYamlToBlogPosts } from '../data/blogPosts';
+
+// Parse YAML blog posts
+const blogPosts = mapYamlToBlogPosts(parsedBlogPosts);
 
 // LinkedIn Recommendations (replace with your real data)
 // const testimonialImages = blogPosts.slice(0, 4).map(post => post.image);
@@ -299,55 +302,38 @@ const AboutMe: React.FC = () => {
 	  <div className="container"><hr /></div>
 
 	  {/* Latest Blog Posts Section */}
-	  <section className="latest-blog-section p-3 p-lg-5">
-    <div className="container">
-      <h2 className="section-title font-weight-bold mb-5">Latest Blog Posts</h2>
-      <div className="row">
-        {blogPosts.slice(0, 3).map((post: any, idx: number) => {
-          // Use relevant images for each blog post
-          let image = post.image;
-          if (post.title.toLowerCase().includes('ai')) {
-            image = 'https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=600&q=80'; // AI/automation
-          } else if (post.title.toLowerCase().includes('cloud')) {
-            image = 'https://images.unsplash.com/photo-1465101046530-73398c7f28ca?auto=format&fit=crop&w=600&q=80'; // Cloud
-          } else if (post.title.toLowerCase().includes('linux')) {
-            image = 'https://images.unsplash.com/photo-1519389950473-47ba0277781c?auto=format&fit=crop&w=600&q=80'; // Linux/engineering
-          } else if (post.title.toLowerCase().includes('react')) {
-            image = 'https://images.unsplash.com/photo-1519125323398-675f0ddb6308?auto=format&fit=crop&w=600&q=80'; // React/JS
-          } else if (post.title.toLowerCase().includes('career')) {
-            image = 'https://images.unsplash.com/photo-1465101178521-c1a9136a3b99?auto=format&fit=crop&w=600&q=80'; // Career/growth
-          } else if (post.title.toLowerCase().includes('terraform')) {
-            image = 'https://images.unsplash.com/photo-1504384308090-c894fdcc538d?auto=format&fit=crop&w=600&q=80'; // Terraform/cloud infra
-          }
-          return (
-            <div className="col-12 col-md-4 mb-5" key={idx}>
-              <div className="card blog-post-card h-100">
-                <img className="card-img-top w-100" src={image} alt={post.title} style={{ objectFit: 'cover', maxHeight: 180 }} />
-                <div className="card-body">
-                  <h5 className="card-title">
-                    <Link className="theme-link" to={post.link}>{post.title}</Link>
-                  </h5>
-                  <p className="card-text">{post.intro}</p>
-                  <p className="mb-0">
-                    <Link className="more-link" to={post.link}>Read more &rarr;</Link>
-                  </p>
-                </div>
-                <div className="card-footer">
-                  <small className="text-muted">{post.date} &middot; {post.time}</small>
+      <section className="latest-blog-section p-3 p-lg-5">
+        <div className="container">
+          <h2 className="section-title font-weight-bold mb-5">Latest Blog Posts</h2>
+          <div className="row">
+            {blogPosts.slice(0, 3).map((post: any, idx: number) => (
+              <div className="col-12 col-md-4 mb-5" key={idx}>
+                <div className="card blog-post-card h-100">
+                  <img className="card-img-top w-100" src={post.image} alt={post.title} style={{ objectFit: 'cover', maxHeight: 180 }} />
+                  <div className="card-body">
+                    <h5 className="card-title">
+                      <Link className="theme-link" to={post.link}>{post.title}</Link>
+                    </h5>
+                    <p className="card-text">{post.intro}</p>
+                    <p className="mb-0">
+                      <Link className="more-link" to={post.link}>Read more &rarr;</Link>
+                    </p>
+                  </div>
+                  <div className="card-footer">
+                    <small className="text-muted">{post.date} {post.time && <> &middot; {post.time}</>}</small>
+                  </div>
                 </div>
               </div>
-            </div>
-          );
-        })}
-      </div>
-      <div className="text-center py-3">
-        <Link to="/blog" className="btn btn-primary">
-          <i className="fas fa-arrow-alt-circle-right mr-2"></i>View Blog
-        </Link>
-      </div>
-    </div>
-  </section>
-	  <div className="container"><hr /></div>
+            ))}
+          </div>
+          <div className="text-center py-3">
+            <Link to="/blog" className="btn btn-primary">
+              <i className="fas fa-arrow-alt-circle-right mr-2"></i>View Blog
+            </Link>
+          </div>
+        </div>
+      </section>
+      <div className="container"><hr /></div>
 	</>
   );
 };

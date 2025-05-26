@@ -1,5 +1,23 @@
 import React from 'react';
 import { Link, useLocation } from 'react-router-dom';
+import { parsedBlogPosts, mapYamlToBlogPosts } from '../data/blogPosts';
+
+// Map YAML to the original blogPosts array format for BlogHome
+export const blogPosts = mapYamlToBlogPosts(parsedBlogPosts);
+
+// Featured posts for Navbar (if needed)
+export const featuredPosts = parsedBlogPosts
+  .filter(post => post.featured)
+  .map(post => ({
+    id: post.id,
+    title: post.title,
+    date: new Date(post.date).toLocaleString('default', { month: 'long', year: 'numeric' }),
+    time: post.time || '',
+    comments: post.comments || 0,
+    image: post.image.startsWith('/') ? post.image : `/assets/images/blog/${post.image}`,
+    intro: post.excerpt,
+    link: `/blog-post-${post.slug}`,
+  }));
 
 const Navbar: React.FC = () => {
   const location = useLocation();
