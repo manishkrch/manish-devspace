@@ -1,5 +1,5 @@
 import yaml from 'js-yaml';
-import blogPostsYml from '../blogPosts.yml?raw';
+import blogPostsYml from '../../src/blogPosts.yml?raw';
 
 // Parse YAML blog posts
 export const parsedBlogPosts = yaml.load(blogPostsYml) as any[];

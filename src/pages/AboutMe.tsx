@@ -1,7 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { Helmet } from 'react-helmet-async';
-import  { projects } from './Portfolio';
+import { parsedPortfolioProjects } from '../data/portfolioProjects';
 import { parsedBlogPosts, mapYamlToBlogPosts } from '../data/blogPosts';
 
 // Parse YAML blog posts
@@ -41,6 +41,9 @@ const testimonials = [
     image: 'https://cdn.jsdelivr.net/gh/twitter/twemoji@14.0.2/assets/72x72/1f468-1f3fc-200d-1f4bb.png', // 👨🏼‍💻
   },
 ];
+
+// Use YAML-driven projects for AboutMe featured section
+const featuredProjects = parsedPortfolioProjects.slice(0, 4);
 
 const AboutMe: React.FC = () => {
   React.useEffect(() => {
@@ -269,7 +272,7 @@ const AboutMe: React.FC = () => {
     <div className="container">
       <h2 className="section-title font-weight-bold mb-5">Featured Projects</h2>
       <div className="row">
-        {projects.slice(0, 4).map((project: any, idx: number) => (
+        {featuredProjects.map((project: any, idx: number) => (
           <div className="col-12 col-md-6 mb-5" key={idx}>
             <div className="card project-card h-100 d-flex flex-column">
               <img src={project.image} className="card-img-top w-100" alt={project.title} style={{ objectFit: 'cover', maxHeight: 180 }} />

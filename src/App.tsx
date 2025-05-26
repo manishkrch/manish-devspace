@@ -3,6 +3,7 @@ import React, { Suspense, lazy } from 'react';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import Navbar from './components/Navbar';
 import { parsedBlogPosts } from './data/blogPosts';
+import { parsedPortfolioProjects } from './data/portfolioProjects';
 import { getBlogPostRouteAndComponent } from './helpers/blogHelpers';
 
 // Lazy load large/infrequent pages for performance
@@ -12,17 +13,6 @@ const Services = lazy(() => import('./pages/Services'));
 const Contact = lazy(() => import('./components/Contact'));
 const Portfolio = lazy(() => import('./pages/Portfolio'));
 const BlogHome = lazy(() => import('./pages/BlogHome'));
-const ProjectAIAutomation = lazy(() => import('./projects/project-ai-automation'));
-const ProjectCloudInfraAutomation = lazy(() => import('./projects/project-cloud-infra-automation'));
-const ProjectCloudMigration = lazy(() => import('./projects/project-cloud-migration'));
-const ProjectCustomerPortal = lazy(() => import('./projects/project-customer-portal'));
-const ProjectDevOpsToolkit = lazy(() => import('./projects/project-devops-toolkit'));
-const ProjectEmployeeSelfService = lazy(() => import('./projects/project-employee-self-service'));
-const ProjectFieldServiceMobile = lazy(() => import('./projects/project-field-service-mobile'));
-const ProjectIncidentResponse = lazy(() => import('./projects/project-incident-response'));
-const ProjectInventoryWebApp = lazy(() => import('./projects/project-inventory-web-app'));
-const ProjectLinuxDebugging = lazy(() => import('./projects/project-linux-debugging'));
-const ProjectPortfolioWebsite = lazy(() => import('./projects/project-portfolio-website'));
 const Subscribe = lazy(() => import('./components/Subscribe'));
 
 // Dynamically lazy-load all blog post components based on blogPosts.yml
@@ -32,6 +22,18 @@ parsedBlogPosts.forEach(post => {
   if (!blogPostComponents[componentName]) {
     // Vite requires a static file extension for dynamic imports
     blogPostComponents[componentName] = lazy(() => import(`./blogs/blog-post-${post.slug}.tsx`));
+  }
+});
+
+// Dynamically lazy-load all project components based on portfolioProjects.yml
+type ProjectComponentMap = Record<string, React.LazyExoticComponent<React.FC>>;
+const projectComponents: ProjectComponentMap = {};
+parsedPortfolioProjects.forEach(project => {
+  // Derive a slug or component name from the link (e.g., '/project-ai-automation' => 'project-ai-automation')
+  const slug = project.link.replace(/^\//, '');
+  if (!projectComponents[slug]) {
+    // Vite requires a static file extension for dynamic imports
+    projectComponents[slug] = lazy(() => import(`./projects/${slug}.tsx`));
   }
 });
 
@@ -111,18 +113,14 @@ const App: React.FC = () => {
                   <Route key={route} path={route} element={<Component />} />
                 );
               })}
-              {/* Project routes */}
-              <Route path="/project-ai-automation" element={<ProjectAIAutomation />} />
-              <Route path="/project-cloud-infra-automation" element={<ProjectCloudInfraAutomation />} />
-              <Route path="/project-cloud-migration" element={<ProjectCloudMigration />} />
-              <Route path="/project-customer-portal" element={<ProjectCustomerPortal />} />
-              <Route path="/project-devops-toolkit" element={<ProjectDevOpsToolkit />} />
-              <Route path="/project-employee-self-service" element={<ProjectEmployeeSelfService />} />
-              <Route path="/project-field-service-mobile" element={<ProjectFieldServiceMobile />} />
-              <Route path="/project-incident-response" element={<ProjectIncidentResponse />} />
-              <Route path="/project-inventory-web-app" element={<ProjectInventoryWebApp />} />
-              <Route path="/project-linux-debugging" element={<ProjectLinuxDebugging />} />
-              <Route path="/project-portfolio-website" element={<ProjectPortfolioWebsite />} />
+              {/* Dynamically add project routes */}
+              {parsedPortfolioProjects.map(project => {
+                const slug = project.link.replace(/^\//, '');
+                const Component = projectComponents[slug];
+                return (
+                  <Route key={project.link} path={project.link} element={<Component />} />
+                );
+              })}
               <Route path="/subscribe" element={<Subscribe />} />
               <Route path="*" element={<NotFound />} />
             </Routes>

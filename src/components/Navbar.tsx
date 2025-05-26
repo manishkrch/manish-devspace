@@ -19,6 +19,9 @@ export const featuredPosts = parsedBlogPosts
     link: `/blog-post-${post.slug}`,
   }));
 
+// Optionally, you can add a featuredProjects export if you want to show featured projects in the Navbar in the future:
+// export const featuredProjects = parsedPortfolioProjects.filter(project => project.featured);
+
 const Navbar: React.FC = () => {
   const location = useLocation();
 
