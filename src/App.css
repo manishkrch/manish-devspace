@@ -40,3 +40,15 @@
 .read-the-docs {
   color: #888;
 }
+
+/*
+  Responsive stacking for project cards on mobile
+*/
+@media (max-width: 991.98px) {
+  .project-card .row.no-gutters {
+    flex-direction: column !important;
+  }
+  .project-card .card-img-holder {
+    margin-bottom: 1rem !important;
+  }
+}
