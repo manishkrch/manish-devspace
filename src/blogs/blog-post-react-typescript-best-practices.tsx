@@ -1,4 +1,5 @@
 import React from 'react';
+import GiscusComments from '../components/GiscusComments';
 
 const BlogPostReactTypescriptBestPractices: React.FC = () => (
   <>
@@ -112,6 +113,7 @@ const handleClick = (e: React.MouseEvent<HTMLButtonElement>) => setCount(count +
           <p>Adopting these best practices will help you build robust, maintainable, and enjoyable React+TypeScript applications. Invest in type safety, code quality, and clear structure for long-term success.</p>
         </div>
         <hr />
+        <GiscusComments />
       </div>
     </article>
   </>

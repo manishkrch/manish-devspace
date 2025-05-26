@@ -1,4 +1,5 @@
 import React from 'react';
+import GiscusComments from '../components/GiscusComments';
 
 const BlogPostCloudMigrationLessons: React.FC = () => (
   <>
@@ -97,6 +98,7 @@ const BlogPostCloudMigrationLessons: React.FC = () => (
           <p>Cloud migration is a journey, not a one-time event. With the right planning, tools, and mindset, you can unlock agility, cost savings, and innovation for your organization. Learn from others, avoid common pitfalls, and embrace continuous improvement.</p>
         </div>
         <hr />
+        <GiscusComments />
       </div>
     </article>
   </>

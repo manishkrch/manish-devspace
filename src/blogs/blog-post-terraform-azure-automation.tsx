@@ -1,4 +1,5 @@
 import React from 'react';
+import GiscusComments from '../components/GiscusComments';
 
 const codeBlockStyle: React.CSSProperties = {
   border: '1px solid #e0e0e0',
@@ -98,6 +99,7 @@ const BlogPostTerraformAzureAutomation: React.FC = () => (
           </div>
         </div>
         <hr />
+        <GiscusComments />
       </div>
     </article>
   </>

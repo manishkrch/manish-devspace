@@ -1,4 +1,5 @@
 import React from 'react';
+import GiscusComments from '../components/GiscusComments';
 
 const BlogPostLinuxDebugging: React.FC = () => (
   <>
@@ -73,6 +74,7 @@ const BlogPostLinuxDebugging: React.FC = () => (
           <p>Linux debugging is a core skill for any SRE or DevOps engineer. With the right tools, a calm mindset, and a systematic approach, you can resolve incidents quickly and build more resilient systems. Always learn from each incident to strengthen your playbook.</p>
         </div>
         <hr />
+        <GiscusComments />
       </div>
     </article>
   </>

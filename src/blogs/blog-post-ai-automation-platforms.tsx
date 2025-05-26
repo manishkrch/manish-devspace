@@ -1,4 +1,5 @@
 import React from 'react';
+import GiscusComments from '../components/GiscusComments';
 
 const BlogPostAIAutomationPlatforms: React.FC = () => (
   <>
@@ -99,6 +100,7 @@ print(response.choices[0].text.strip())`}</code></pre>
           <p>AI automation platforms unlock new efficiencies and capabilities for modern enterprises. By combining cloud, Python, and AI services, you can automate complex workflows and deliver real business value. Start small, learn fast, and scale your automation journey.</p>
         </div>
         <hr />
+        <GiscusComments />
       </div>
     </article>
   </>

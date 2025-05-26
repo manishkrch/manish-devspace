@@ -1,4 +1,5 @@
 import React from 'react';
+import GiscusComments from '../components/GiscusComments';
 
 const BlogPostCareerGrowthTech: React.FC = () => (
   <>
@@ -85,6 +86,7 @@ const BlogPostCareerGrowthTech: React.FC = () => (
           <p>Career growth in tech is a marathon, not a sprint. Invest in yourself, help others grow, and embrace new opportunities. Whether you stay hands-on or move into leadership, continuous learning and a growth mindset are your best assets.</p>
         </div>
         <hr />
+        <GiscusComments />
       </div>
     </article>
   </>
